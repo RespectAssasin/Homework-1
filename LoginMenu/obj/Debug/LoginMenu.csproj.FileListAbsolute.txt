@@ -1,0 +1,15 @@
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.csproj.AssemblyReference.cache
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\MainWindow.g.cs
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\App.g.cs
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu_MarkupCompile.cache
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu_MarkupCompile.lref
+C:\Users\makar\source\repos\LoginMenu\bin\Debug\LoginMenu.exe.config
+C:\Users\makar\source\repos\LoginMenu\bin\Debug\LoginMenu.exe
+C:\Users\makar\source\repos\LoginMenu\bin\Debug\LoginMenu.pdb
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\MainWindow.baml
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.g.resources
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.Properties.Resources.resources
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.csproj.GenerateResource.cache
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.csproj.CoreCompileInputs.cache
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.exe
+C:\Users\makar\source\repos\LoginMenu\obj\Debug\LoginMenu.pdb
