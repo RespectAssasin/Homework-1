@@ -24,5 +24,43 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        char[][] arr = new char[3][]; 
+
+        private void GameClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                string buttonName = button.Name;
+                if (buttonName.Length >= 2)
+                {
+                    int x, y;
+                    if (int.TryParse(buttonName[buttonName.Length - 2].ToString(), out x) &&
+                        int.TryParse(buttonName[buttonName.Length - 1].ToString(), out y))
+                    {
+                        if (x >= 0 && x < 3 && y >= 0 && y < 3)
+                        {
+                            // Сохранение значения Content в массив
+                            arr[3][3] = (char)button.Content;
+                            MessageBox.Show($"Значение '{arr[3][3]}' добавлено в массив на место ({x}, {y})");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Координаты за пределами допустимого диапазона.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось извлечь координаты из имени кнопки.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Имя кнопки слишком короткое.");
+                }
+            }
+        }
+    }
     }
 }
