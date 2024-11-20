@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\makar\\source\\repos\\LoginMenu\\",
+  "WorkspaceRootPath": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|c:\\users\\makar\\source\\repos\\loginmenu\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|c:\\users\\makar\\source\\repos\\loginmenu\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|c:\\users\\makar\\documents\\github\\homework\\loginmenu\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|C:\\Users\\makar\\source\\repos\\LoginMenu\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A7A66A3C-99C7-407D-803C-F301ECF145A0}|LoginMenu.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,16 +21,16 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 102,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 254,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\makar\\source\\repos\\LoginMenu\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\makar\\source\\repos\\LoginMenu\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-19T13:59:43.334Z",
@@ -39,36 +39,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\makar\\source\\repos\\LoginMenu\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\makar\\source\\repos\\LoginMenu\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAvwHAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T13:59:42.725Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 298,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\makar\\source\\repos\\LoginMenu\\User.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\User.cs",
               "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "C:\\Users\\makar\\source\\repos\\LoginMenu\\User.cs",
+              "ToolTip": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\LoginMenu\\User.cs",
               "RelativeToolTip": "User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wC0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T15:43:38.969Z",
               "EditorCaption": ""

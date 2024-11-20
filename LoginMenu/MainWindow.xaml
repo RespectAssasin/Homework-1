@@ -9,7 +9,7 @@
         MinHeight="600" MaxHeight="600"
         MinWidth="400" MaxWidth="400">
     <Grid>
-        <StackPanel x:Name="MainMenuPanel" Visibility="Collapsed" Width="400" Height="600">
+        <StackPanel x:Name="MainMenuPanel" Visibility="Visible" Width="400" Height="600">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
@@ -29,7 +29,7 @@
             </Grid>
             <StackPanel Height="100"/>
         </StackPanel>
-        <StackPanel x:Name="LoginPanel" Visibility="Visible"
+        <StackPanel x:Name="LoginPanel" Visibility="Collapsed"
                     Width="400" Height="600">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -63,17 +63,19 @@
                 <Button x:Name="LoginButt" Grid.Column="1" Grid.Row="7" Content="Login" FontSize="20" Background="#FFA2CEF5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Login" Width="152" Foreground="#FF0F497D"/>
 
                 <TextBox Grid.Column="1" Grid.Row="9" Text="Создать новый аккаунт?" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF0084FF" MouseDoubleClick="GoToRegistration"/>
+                
             </Grid>
         </StackPanel>
         <StackPanel x:Name="RegistrationPanel" Visibility="Collapsed" Width="400" Height="600">
-            <Grid>
+            <Grid Height="561">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
                     <ColumnDefinition Width="200*"/>
                     <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="25"/>
@@ -85,22 +87,29 @@
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="10"/>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="15"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Column="1" Grid.Row="1" Text="Username" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
-                <TextBlock Grid.Column="1" Grid.Row="4" Text="Email" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
-                <TextBlock Grid.Column="1" Grid.Row="7" Text="Password" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
-                <TextBlock Grid.Column="1" Grid.Row="10" Text="Password (Confirm the password)" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
-                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,72,0,0" TextWrapping="Wrap" Text="Registration" VerticalAlignment="Bottom" Width="111" FontSize="20" Foreground="#FF384A5A"/>
-
-                <TextBox x:Name="UserNameBox" Grid.Column="1" Grid.Row="2" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
-                <TextBox x:Name="EmailBox" Grid.Column="1" Grid.Row="5" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
-                <PasswordBox x:Name="FirstPasswordBox" Grid.Column="1" Grid.Row="8" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
-                <PasswordBox x:Name="SecondPasswordBox" Grid.Column="1" Grid.Row="11" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
-
-                <Button Grid.Column="1" Grid.Row="13" Content="Registration" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Margin="10,10,10,10" Click="Registration" Background="#FF9FCBF3" Foreground="#FF384A5A"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
+                <TextBlock Grid.Column="1" Grid.Row="5" Text="Email" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
+                <TextBlock Grid.Column="1" Grid.Row="8" Text="Password" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
+                <TextBlock Grid.Column="1" Grid.Row="11" Text="Password (Confirm the password)" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
+                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Margin="0,44,0,0" TextWrapping="Wrap" Text="Registration" VerticalAlignment="Top" Width="112" FontSize="20" Foreground="#FF384A5A" Height="31"/>
+                <TextBlock Grid.Column="1" Grid.Row="14" Text="Phone" FontSize="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FF41505D" />
+                
+                <TextBox x:Name="UserNameBox" Grid.Column="1" Grid.Row="3" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
+                <TextBox x:Name="EmailBox" Grid.Column="1" Grid.Row="6" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
+                <PasswordBox x:Name="FirstPasswordBox" Grid.Column="1" Grid.Row="9" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
+                <PasswordBox x:Name="SecondPasswordBox" Grid.Column="1" Grid.Row="12" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
+                <TextBox x:Name="PhoneBox" Grid.Column="1" Grid.Row="15" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" BorderBrush="#FF8A8A8A" Background="#FFC8E5FF" Foreground="#FF0A1F31"/>
+                
+                <Button Grid.Column="1" Grid.Row="16" Content="Registration" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Margin="10,10,10,10" Click="Registration" Background="#FF9FCBF3" Foreground="#FF384A5A"/>
+                <TextBox Grid.Column="1" Grid.Row="17" Text="Нет зарегестрированного аккаунта?" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF0084FF" MouseDoubleClick="GoToLogin" Height="22" Width="173"/>
+            
             </Grid>
         </StackPanel>
         <StackPanel x:Name="UserPanel" Visibility="Collapsed" Width="400" Height="600">
@@ -122,7 +131,10 @@
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="10"/>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="20"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -130,12 +142,14 @@
                 <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontSize="9" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF406869"/>
                 <TextBlock Grid.Column="1" Grid.Row="5" Text="Email" FontSize="9" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF406869"/>
                 <TextBlock Grid.Column="1" Grid.Row="8" Text="Password" FontSize="9" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF406869"/>
+                <TextBlock Grid.Column="1" Grid.Row="11" Text="Phone" FontSize="9" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="#FF406869"/>
 
                 <TextBlock x:Name="UsernameInfo" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFACD6DC" Width="250" Margin="0,25,0,0" Height="25"/>
                 <TextBlock x:Name="EmailInfo" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFACD6DC" Width="250" Margin="0,25,0,0" Height="25"/>
                 <TextBlock x:Name="PasswordInfo" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFACD6DC" Width="250" Margin="0,25,0,0" Height="25"/>
+                <TextBlock x:Name="PhoneInfo" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="12" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFACD6DC" Width="250" Margin="0,25,0,0" Height="25"/>
 
-                <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="11" Click="GoToMenu" Content="Back to Menu" Foreground="#FF334A4E" Background="#FF63B9C5" Margin="10,10,10,10"/>
+                <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="14" Click="GoToMenu" Content="Back to Menu" Foreground="#FF334A4E" Background="#FF63B9C5" Margin="10,10,10,10"/>
             </Grid>
         </StackPanel>
     </Grid>

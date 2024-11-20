@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\makar\Documents\GitHub\Homework\LoginMenu\obj\Debug\
+C:\Users\makar\Documents\GitHub\Homework\LoginMenu\obj\Release\
 LoginMenu
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\makar\Documents\GitHub\Homework\LoginMenu\App.xaml
 1219584333
 

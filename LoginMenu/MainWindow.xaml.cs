@@ -15,22 +15,18 @@ using System.Windows.Shapes;
 
 namespace LoginMenu
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+    /*UsernameBox.Text = string.Empty;
+            EmailBox.Text = string.Empty;
+            PasswordBox.Password = string.Empty;
+            PhoneBox.Text = string.Empty;*/
     public partial class MainWindow : Window
     {
+        private List<User> _users = new List<User>();
+
         public MainWindow()
         {
             InitializeComponent();
         }
-        private List<string> _userNames = new List<string>();
-        private List<string> _emails = new List<string>();
-        private List<string> _passwords = new List<string>();
-
-        public List<string> UserNames { get { return _userNames; } }
-        public List<string> Emails { get { return _emails; } }
-        public List<string> Passwords { get { return _passwords; } }
 
         private void GoToLogin(object sender, RoutedEventArgs e)
         {
@@ -39,6 +35,7 @@ namespace LoginMenu
             UserPanel.Visibility = Visibility.Collapsed;
             LoginPanel.Visibility = Visibility.Visible;
         }
+
         private void GoToRegistration(object sender, RoutedEventArgs e)
         {
             MainMenuPanel.Visibility = Visibility.Collapsed;
@@ -46,6 +43,7 @@ namespace LoginMenu
             UserPanel.Visibility = Visibility.Collapsed;
             LoginPanel.Visibility = Visibility.Collapsed;
         }
+
         private void GoToMenu(object sender, RoutedEventArgs e)
         {
             UserPanel.Visibility = Visibility.Collapsed;
@@ -54,61 +52,77 @@ namespace LoginMenu
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            if (UsernameBox.Text == string.Empty || PasswordBox.Password == string.Empty) 
+            if (string.IsNullOrWhiteSpace(UsernameBox.Text) || string.IsNullOrWhiteSpace(PasswordBox.Password))
             {
                 MessageBox.Show("Ошибка, вы не заполнили все поля");
                 return;
             }
-            User user = new User(UsernameBox.Text, PasswordBox.Password);
 
-            if (!user.IsExist(UserNames, Emails, Passwords))
+            var user = _users.FirstOrDefault(u =>
+                (u.UserName == UsernameBox.Text || u.Email == UsernameBox.Text || u.PhoneNumber == UsernameBox.Text) &&
+                u.Password == PasswordBox.Password);
+
+            if (user == null)
             {
-                MessageBox.Show($"Ошибка, пользователь не найден\nВозможно неправильный логин или пароль{user.UserName}, {user.Email}, {user.Password}, {user.IsExist(UserNames, Emails, Passwords)}");
+                MessageBox.Show("Ошибка, пользователь не найден. Проверьте данные для входа.");
                 return;
-            } else
-            {
-                LoginPanel.Visibility = Visibility.Collapsed;
-                UserPanel.Visibility = Visibility.Visible;
-
-                UsernameInfo.Text = user.UserName;
-                EmailInfo.Text = user.Email;
-                PasswordInfo.Text = user.Password;
             }
+
+            LoginPanel.Visibility = Visibility.Collapsed;
+
+            
+
+            UserPanel.Visibility = Visibility.Visible;
+
+            UsernameInfo.Text = user.UserName;
+            EmailInfo.Text = user.Email;
+            PasswordInfo.Text = user.Password;
+            PhoneInfo.Text = user.PhoneNumber;
         }
 
         private void Registration(object sender, RoutedEventArgs e)
         {
-            if (UserNameBox.Text == string.Empty || EmailBox.Text == String.Empty || FirstPasswordBox.Password == string.Empty || SecondPasswordBox.Password == string.Empty) 
+            if (string.IsNullOrWhiteSpace(UserNameBox.Text) ||
+                string.IsNullOrWhiteSpace(EmailBox.Text) ||
+                string.IsNullOrWhiteSpace(PhoneBox.Text) ||
+                string.IsNullOrWhiteSpace(FirstPasswordBox.Password) ||
+                string.IsNullOrWhiteSpace(SecondPasswordBox.Password))
             {
-                MessageBox.Show("Ошибка, неправильный логин или пароль");
+                MessageBox.Show("Ошибка, все поля обязательны для заполнения.");
                 return;
             }
+
             if (FirstPasswordBox.Password != SecondPasswordBox.Password)
             {
-                MessageBox.Show("Ошибка, Первый пароли не одинаковы");
+                MessageBox.Show("Ошибка, пароли не совпадают.");
+                return;
             }
 
-            User user = new User(UserNameBox.Text, EmailBox.Text, FirstPasswordBox.Password);
-            user.AddUser(_userNames, _emails, _passwords);
-            if (!user.IsExist(UserNames, Emails, Passwords))
+            if (_users.Any(u => u.UserName == UserNameBox.Text || u.Email == EmailBox.Text || u.PhoneNumber == PhoneBox.Text))
             {
-                MessageBox.Show("Пользователь не добавлен\nps(не надо ломать меня)");
-            } else
+                MessageBox.Show("Ошибка, пользователь с такими данными уже существует.");
+                return;
+            }
+
+            try
             {
-                MessageBox.Show($"Поздравляем с регистрацией.\nПерезайдите в приложение, чтобы войти в аккаунт\n{user.IsExist(UserNames, Emails, Passwords)}, ");
-                
+                var newUser = new User(UserNameBox.Text, EmailBox.Text, PhoneBox.Text, FirstPasswordBox.Password);
+                _users.Add(newUser);
+                MessageBox.Show("Регистрация успешна. Теперь вы можете войти.");
 
                 RegistrationPanel.Visibility = Visibility.Collapsed;
                 MainMenuPanel.Visibility = Visibility.Visible;
 
                 UserNameBox.Text = string.Empty;
                 EmailBox.Text = string.Empty;
+                PhoneBox.Text = string.Empty;
                 FirstPasswordBox.Password = string.Empty;
                 SecondPasswordBox.Password = string.Empty;
             }
-            
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}");
+            }
         }
-
-        
     }
 }
