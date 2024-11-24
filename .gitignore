@@ -1,0 +1,11 @@
+
+*.pdb
+.vs/Homework/v17/.wsuo
+*.json
+.vs/slnx.sqlite
+TicTacToe/.vs/TicTacToe/v17/.suo
+TicTacToe/obj/Debug/MainWindow.baml
+TicTacToe/obj/Debug/MainWindow.g.cs
+TicTacToe/obj/Debug/MainWindow.g.i.cs
+TicTacToe/obj/Debug/TicTacToe.g.resources
+TicTacToe/obj/Debug/TicTacToe.pdb
