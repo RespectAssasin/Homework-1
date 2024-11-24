@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\TicTacToe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|c:\\users\\makar\\documents\\github\\homework\\tictactoe\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|C:\\Users\\makar\\Documents\\GitHub\\Homework\\TicTacToe\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|C:\\Users\\makar\\Documents\\GitHub\\Homework\\TicTacToe\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|c:\\users\\makar\\documents\\github\\homework\\tictactoe\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FD97382-B812-40BB-B090-4D040B8CAB60}|TicTacToe.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\makar\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIAwwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwEAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T21:19:01.036Z",
               "EditorCaption": ""

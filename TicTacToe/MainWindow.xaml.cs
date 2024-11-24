@@ -25,7 +25,7 @@ namespace TicTacToe
             InitializeComponent();
         }
 
-        char[][] arr = new char[3][]; 
+        private char[][] arr = new char[3][];
 
         private void GameClick(object sender, RoutedEventArgs e)
         {
@@ -41,7 +41,6 @@ namespace TicTacToe
                     {
                         if (x >= 0 && x < 3 && y >= 0 && y < 3)
                         {
-                            // Сохранение значения Content в массив
                             arr[3][3] = (char)button.Content;
                             MessageBox.Show($"Значение '{arr[3][3]}' добавлено в массив на место ({x}, {y})");
                         }
@@ -60,7 +59,7 @@ namespace TicTacToe
                     MessageBox.Show("Имя кнопки слишком короткое.");
                 }
             }
+
         }
-    }
     }
 }
