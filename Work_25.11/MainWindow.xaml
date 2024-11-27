@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="125"/>
                 </Grid.ColumnDefinitions>
-                <MenuItem Grid.Column="0" Header="Игрок" /> 
+                <MenuItem Grid.Column="0" Header="Игрок"/> 
                 <MenuItem Grid.Column="1" Header="Тест" />
                 <MenuItem Grid.Column="2" Header="Результаты" />
             </Grid>
@@ -36,7 +36,7 @@
             </Grid>
         </StackPanel>
 
-        <StackPanel Name="TestMenuPanel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Name="StartTestPanel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid Height="100" Width="400">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
@@ -51,8 +51,8 @@
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" x:Name="TimerBox" Text="00:00:00" FontSize="24" HorizontalAlignment="Center"/>
-                <Button Grid.Row="1" Name="StopButton" Content="Стоп" Width="100" Height="30" Click="StopTest_Click"/>
+                <TextBlock Grid.Row="0" x:Name="TimerBox" Text="00:00:00:000" FontSize="24" HorizontalAlignment="Center"/>
+                <Button Grid.Row="1" x:Name="StopButton" Content="Стоп" Width="100" Height="30" Click="StopTest_Click"/>
             </Grid>
         </StackPanel>
 

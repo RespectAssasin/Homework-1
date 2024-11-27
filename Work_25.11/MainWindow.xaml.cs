@@ -40,13 +40,13 @@ namespace Work_25._11
         {
             UserName = UserNameBox.Text;
             UserInputPanel.Visibility = Visibility.Collapsed;
-            TestMenuPanel.Visibility = Visibility.Visible;
+            StartTestPanel.Visibility = Visibility.Visible;
             UserNameBox.Text = string.Empty;
         }
 
          private async void StartTest_Click(object sender, RoutedEventArgs e)
         {
-            TestMenuPanel.Visibility = Visibility.Collapsed;
+            StartTestPanel.Visibility = Visibility.Collapsed;
             ReactionTestPanel.Visibility = Visibility.Visible;
             await Task.Delay(_random.Next(3000, 7000));
 
@@ -62,12 +62,15 @@ namespace Work_25._11
 
             MessageBox.Show($"Ваше время: {diff.ToString(@"hh\:mm\:ss\.fff")}", "Результат");
 
-            TestMenuPanel.Visibility= Visibility.Collapsed;
+            StartTestPanel.Visibility= Visibility.Collapsed;
 
             Player player = new Player(UserName, diff.ToString());
             LeaderBoard.Add(player);
 
             UpdateLeaderboardDisplay();
+
+            //
+
             LeaderboardPanel.Visibility= Visibility.Visible;
             TimerBox.Text= string.Empty;
         }
@@ -75,6 +78,7 @@ namespace Work_25._11
         private void StopTest_Click(object sender, RoutedEventArgs e)
         {
             _isRunning = false;
+            StopButton.Visibility = Visibility.Collapsed;
         }
 
         private void UpdateLeaderboardDisplay()

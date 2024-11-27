@@ -13,3 +13,18 @@ C:\Users\makar\Documents\GitHub\Homework\Work_25.11\obj\Debug\Work_25.11.csproj.
 C:\Users\makar\Documents\GitHub\Homework\Work_25.11\obj\Debug\Work_25.11.csproj.CoreCompileInputs.cache
 C:\Users\makar\Documents\GitHub\Homework\Work_25.11\obj\Debug\Work_25.11.exe
 C:\Users\makar\Documents\GitHub\Homework\Work_25.11\obj\Debug\Work_25.11.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\bin\Debug\Work_25.11.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\bin\Debug\Work_25.11.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\bin\Debug\Work_25.11.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25._11.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Homework\Work_25.11\obj\Debug\Work_25.11.csproj.CoreCompileInputs.cache
