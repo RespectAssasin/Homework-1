@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\SystemX\\Documents\\GitHub\\Exam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|C:\\Users\\SystemX\\Documents\\GitHub\\Exam\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|c:\\users\\systemx\\documents\\github\\exam\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|c:\\users\\systemx\\documents\\github\\exam\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|C:\\Users\\SystemX\\Documents\\GitHub\\Exam\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{514B7D23-4395-4949-8150-D1B86A6A81D6}|Exam.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Exam\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAmwF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwDUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T16:06:39.323Z",
               "EditorCaption": ""
