@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Exam"
+    "\\Minesweeper"
   ],
-  "SelectedNode": "\\Exam\\MainWindow.xaml.cs",
+  "SelectedNode": "\\Minesweeper\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
