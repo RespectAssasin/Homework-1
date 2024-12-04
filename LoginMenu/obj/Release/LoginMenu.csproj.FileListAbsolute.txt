@@ -17,3 +17,29 @@ C:\Users\makar\Documents\GitHub\Homework\LoginMenu\bin\Release\LoginMenu.exe.man
 C:\Users\makar\Documents\GitHub\Homework\LoginMenu\bin\Release\LoginMenu.application
 C:\Users\makar\Documents\GitHub\Homework\LoginMenu\obj\Release\LoginMenu.exe.manifest
 C:\Users\makar\Documents\GitHub\Homework\LoginMenu\obj\Release\LoginMenu.application
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\LoginMenu.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\LoginMenu.exe.manifest
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\LoginMenu.application
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\LoginMenu.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\LoginMenu.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\ru\LoginMenu.resources.dll
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.Translation.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.Translation.ru.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.csproj.CoreCompileInputs.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\ru\LoginMenu.resources.dll
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.exe.manifest
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.application
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\bin\Release\en\LoginMenu.resources.dll
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\LoginMenu.Translation.en.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Максим Github\Homework\LoginMenu\obj\Release\en\LoginMenu.resources.dll

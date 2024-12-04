@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
+using System.Threading;
 
 namespace LoginMenu
 {
@@ -22,7 +24,35 @@ namespace LoginMenu
     public partial class MainWindow : Window
     {
         private List<User> _users = new List<User>();
+        
+        private void UpdateUI()
+        {
+            WelcomeBlock.Text = Translation.WelcomeBlock;
+            LoginButt.Content = Translation.LoginButt;
+            RegisButt.Content = Translation.RegisButt;
+            //ChangeLanguage.Content = Translation.ChangeLanguage;
 
+            LoginBlock.Text = Translation.LoginBlock;
+            EmailBlock.Text = Translation.EmailBlock;
+            PasswordBlock.Text = Translation.PasswordBlock;
+            LoginButton.Content = Translation.LoginButton;
+
+            UsernameBlock.Text = Translation.UsernameBlock;
+            EmailTextBlock.Text = Translation.EmailTextBlock;
+            PasswordTextBlock.Text = Translation.PasswordTextBlock;
+            PasswordBlockConfirm.Text = Translation.PasswordBlockConfirm;
+            RegistrationBlock.Text = Translation.RegistrationBlock;
+            RegistrationBlock.Text = Translation.RegistrationBlock;
+            RegistrationButt.Content = Translation.RegistrationButt;
+            DontHaveAcc.Text = Translation.DontHaveAcc;
+
+            UserInfo.Text = Translation.UsernameInfo;
+            UsernameInfoBlock.Text = Translation.UsernameInfoBlock;
+            EmailInfoBlock.Text = Translation.EmailInfoBlock;
+            PasswordInfoBlock.Text = Translation.PasswordInfoBlock;
+            PhoneInfoBlock.Text = Translation.PhoneInfoBlock;
+
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -70,7 +100,7 @@ namespace LoginMenu
 
             LoginPanel.Visibility = Visibility.Collapsed;
 
-            
+
 
             UserPanel.Visibility = Visibility.Visible;
 
@@ -123,6 +153,22 @@ namespace LoginMenu
             {
                 MessageBox.Show($"Ошибка: {ex.Message}");
             }
+        }
+
+        private void ChangeLanguageButtToEn(object sender, RoutedEventArgs e)
+        {
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+
+            UpdateUI();
+        }
+
+
+        private void ChangeLanguageToRU(object sender, RoutedEventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru");
+
+            UpdateUI();
         }
     }
 }

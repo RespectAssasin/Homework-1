@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LoginMenu.exe.manifest" size="3644">
+    <dependentAssembly dependencyType="install" codebase="LoginMenu.exe.manifest" size="4950">
       <assemblyIdentity name="LoginMenu.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>33q9ckPU9sLbelLT7ydwo5mHspA+4/bbW4usx/XrTjA=</dsig:DigestValue>
+        <dsig:DigestValue>iRf5o0olhFnlOj7l3OPwpinFAGvMUKu5xzvtbE0rNXY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

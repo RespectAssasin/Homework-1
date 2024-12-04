@@ -83,6 +83,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Translation.en.Designer.cs">
+      <DependentUpon>Translation.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Translation.ru.Designer.cs">
+      <DependentUpon>Translation.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Translation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Translation.resx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +129,18 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Translation.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translation.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Translation.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translation.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Translation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translation.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="LoginMenu_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
