@@ -95,7 +95,7 @@
 
 				<TextBlock Grid.Row="0" Grid.Column="1" Text="Настройки" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="25"/>
 
-				<TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"><Run Text="Выберите, к"/><Run Language="ru-ru" Text="т"/><Run Text="о ходит первым"/></TextBlock>
+				<TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"><Run Text="Выберите, за кого вы ходите"/></TextBlock>
 				<RadioButton x:Name="RadioButt_X" IsChecked="False" Grid.Row="2" Grid.Column="1" Content="X" HorizontalAlignment="Left" Margin="64,13,0,13"/>
                 <RadioButton x:Name="RadioButt_O" IsChecked="False" Grid.Row="2" Grid.Column="1" Content="O" HorizontalAlignment="Right" Margin="0,13,57,10" Width="62"/>
 
