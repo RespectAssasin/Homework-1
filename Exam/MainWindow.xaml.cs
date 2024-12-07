@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,74 +22,95 @@ namespace Exam
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void GoToGame(object sender, RoutedEventArgs e)
-        {
-            MenuPanel.Visibility = Visibility.Collapsed;
-            GamePanel.Visibility = Visibility.Visible;
-        }
-
-        private DispatcherTimer _gameTimer;
+        private string _userName;
+        private int maxRows = 4;
+        private int maxCols = 4;
         private TimeSpan _timeRemaining;
         private Random _random;
-        private Button _clickButton;
+
+        private Button _clickButton = null;
         private int _clickCount;
+
+        private List<(string Name, int Score)> _leaderboard = new List<(string Name, int Score)>();
 
         public MainWindow()
         {
             InitializeComponent();
             _random = new Random();
-            _gameTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            _gameTimer.Tick += GameTimer_Tick;
         }
-        private async void StartTimer()
+        private void GoToGame(object sender, RoutedEventArgs e)
+        {
+            MenuPanel.Visibility = Visibility.Collapsed;
+            _userName = UserNameBox.Text;
+            GamePanel.Visibility = Visibility.Visible;
+        }
+
+        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            StartButton.Visibility = Visibility.Collapsed;
+            TimerTextBlock.Visibility = Visibility.Visible;
+            GameArea.Visibility = Visibility.Visible;
+            GameGrid.Visibility = Visibility.Visible;
+
+            _timeRemaining = TimeSpan.FromMinutes(0.5);
+            TimerTextBlock.Text = _timeRemaining.ToString(@"mm\:ss");
+
+            _clickCount = 0;
+            UpdateClickCounter();
+          
+            await Task.Delay(100);
+            /*MessageBox.Show($"GameGrid: Width={GameGrid.ActualWidth}, Height={GameGrid.ActualHeight}");*/
+            CreateGameButton();
+
+            await StartTimer();
+            EndGame();
+        }
+        private void UpdateClickCounter()
+        {
+            ClickCounterTextBlock.Text = $"Счёт: {_clickCount}";
+        }
+        
+        private async Task StartTimer()
         {
             while (_timeRemaining > TimeSpan.Zero)
             {
                 TimerTextBlock.Text = _timeRemaining.ToString(@"mm\:ss");
                 await Task.Delay(1000);
                 _timeRemaining -= TimeSpan.FromSeconds(1);
-            }
-
-            EndGame();
-        }
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-            StartButton.Visibility = Visibility.Collapsed;
-            TimerTextBlock.Visibility = Visibility.Visible;
-            GameArea.Visibility = Visibility.Visible;
-
-            _timeRemaining = TimeSpan.FromMinutes(1);
-            TimerTextBlock.Text = _timeRemaining.ToString(@"mm\:ss");
-
-            _clickCount = 0;
-            UpdateClickCounter();
-
-            StartTimer();
-            CreateGameButton();
-        }
-
-        private void GameTimer_Tick(object sender, EventArgs e)
-        {
-            _timeRemaining -= TimeSpan.FromSeconds(1);
-            TimerTextBlock.Text = _timeRemaining.ToString(@"mm\:ss");
-            if (_timeRemaining <= TimeSpan.Zero)
-            {
-                _gameTimer.Stop();
-                EndGame();
-            }
+            } 
         }
 
         private void EndGame()
         {
             MessageBox.Show($"Время вышло! Ваш счёт: {_clickCount}", "Игра завершена");
+
+            /*_playerNames.Add(_userName);
+            _playerScores.Add(_clickCount);*/
+
+            _leaderboard.Add((_userName, _clickCount));
+            UpdateLeaderboard();
+
             GameGrid.Children.Clear();
             GameArea.Visibility = Visibility.Collapsed;
             TimerTextBlock.Visibility = Visibility.Collapsed;
             StartButton.Visibility = Visibility.Visible;
+
+            ShowLeaderboard();
+        }
+        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            LeaderboardPanel.Visibility = Visibility.Collapsed;
+            MenuPanel.Visibility = Visibility.Visible;
         }
 
         private void CreateGameButton()
         {
+            if (GameGrid.ActualWidth <= 0 || GameGrid.ActualHeight <= 0)
+            {
+                MessageBox.Show("GameGrid не готов. Проверьте размеры.");
+                return;
+            }
+
             if (_clickButton != null)
             {
                 GameGrid.Children.Remove(_clickButton);
@@ -97,13 +119,12 @@ namespace Exam
             _clickButton = new Button
             {
                 Content = "Жми!!!",
-                Width = 80,
-                Height = 40
+                Width = 100,
+                Height = 50,
+                FontSize=15
             };
-            _clickButton.Click += ClickButton_Click;
 
-            int maxRows = 10;
-            int maxCols = 10;
+            _clickButton.Click += ClickButton_Click;
 
             GameGrid.RowDefinitions.Clear();
             GameGrid.ColumnDefinitions.Clear();
@@ -123,6 +144,7 @@ namespace Exam
             GameGrid.Children.Add(_clickButton);
         }
 
+
         private void ClickButton_Click(object sender, RoutedEventArgs e)
         {
             _clickCount++;
@@ -130,9 +152,21 @@ namespace Exam
             CreateGameButton();
         }
 
-        private void UpdateClickCounter()
+        private void UpdateLeaderboard()
         {
-            ClickCounterTextBlock.Text = $"Счёт: {_clickCount}";
+          //_leaderboard.Add((_userName, _clickCount));
+            _leaderboard = _leaderboard.OrderByDescending(player => player.Score).Take(5).ToList();
+        }
+        private void ShowLeaderboard()
+        {
+            LeaderboardListBox.Items.Clear();
+            foreach (var player in _leaderboard)
+            {
+                LeaderboardListBox.Items.Add($"{player.Name}: {player.Score}");
+            }
+
+            GamePanel.Visibility = Visibility.Collapsed;
+            LeaderboardPanel.Visibility = Visibility.Visible;
         }
     }
 }
