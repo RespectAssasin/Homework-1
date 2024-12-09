@@ -28,22 +28,40 @@ namespace Minesweeper
         public MainWindow()
         {
             InitializeComponent();
+            GenerateGameField();
+            GenerateUIField();
         }
+        Random rand = new Random();
+        
         
         private void GenerateGameField()
         {
             _gameField = new bool[_gameFieldWidth, _gameFieldHight];
             _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
-        
-            for (int i = 0; i < _minesNumber; i++ )
+
+            int placedMines = 0;
+
+            while (placedMines < _minesNumber)
             {
-                int row = Next(_gameFieldWidth);
+                int row = rand.Next(0, _gameFieldHight);
+                int col = rand.Next(0, _gameFieldWidth);
+
+                if (!_gameField[col,row] && (col == 0 || !_gameField[col-1,row]) && (col == _gameFieldWidth - 1 || !_gameField[col+1,row]))
+                {
+                    _gameField[col,row] = true;
+                    placedMines++;
+                }
+                else
+                {
+                    placedMines--;
+                }
             }
         }
 
         private void GenerateUIField()
         {
             Grid gameField = new Grid();
+            GamePanel.Children.Clear();
             GamePanel.Children.Add(gameField);
             gameField.Margin = new Thickness(80, 130, 80, 10);
 
@@ -59,6 +77,23 @@ namespace Minesweeper
                 gameField.ColumnDefinitions.Add(newColumn);
             }
 
+            for (int row = 0; row < _gameFieldHight; row++)
+            {
+                for (int col = 0; col < _gameFieldWidth; col++)
+                {
+                    Button cellButton = new Button
+                    {
+                        FontSize = 16,
+                        Margin = new Thickness(2),
+                        Background = Brushes.LightGray,
+                        Content = _gameField[row, col] ? "M" : "O"
+                    };
+
+                    Grid.SetRow(cellButton, row);
+                    Grid.SetColumn(cellButton, col);
+                    gameField.Children.Add(cellButton);
+                }
+            }
         }
 
     }
