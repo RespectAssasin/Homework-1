@@ -46,16 +46,45 @@ namespace Minesweeper
                 int row = rand.Next(0, _gameFieldHight);
                 int col = rand.Next(0, _gameFieldWidth);
 
-                if (!_gameField[col,row] && (col == 0 || !_gameField[col-1,row]) && (col == _gameFieldWidth - 1 || !_gameField[col+1,row]))
+                if (!_gameField[col, row] &&
+                    (col == 0 || !_gameField[col - 1, row]) &&
+                    (col == _gameFieldWidth - 1 || !_gameField[col + 1, row]) &&
+                    (row == 0 || !_gameField[col, row - 1]) &&
+                    (row == _gameFieldHight - 1 || !_gameField[col, row + 1]))
                 {
                     _gameField[col,row] = true;
                     placedMines++;
                 }
-                else
+                /*else
                 {
                     placedMines--;
+                }*/
+            }
+        }
+
+        private int CountNearMines(int row, int col)
+        {
+            int count = 0;
+
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    int newRow = row + i;
+                    int newCol = col + j;
+
+                    if (newRow >= 0 && newRow < _gameFieldHight &&
+                        newCol >= 0 && newCol < _gameFieldWidth &&
+                        !(i == 0 && j == 0)) 
+                    {
+                        if (_gameField[newRow, newCol])
+                        {
+                            count++;
+                        }
+                    }
                 }
             }
+            return count;
         }
 
         private void GenerateUIField()
@@ -77,6 +106,8 @@ namespace Minesweeper
                 gameField.ColumnDefinitions.Add(newColumn);
             }
 
+
+
             for (int row = 0; row < _gameFieldHight; row++)
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
@@ -86,8 +117,18 @@ namespace Minesweeper
                         FontSize = 16,
                         Margin = new Thickness(2),
                         Background = Brushes.LightGray,
-                        Content = _gameField[row, col] ? "M" : "O"
+                        //Content = _gameField[row, col] ? "M" : "O"
                     };
+
+                    if (_gameField[row,col])
+                    {
+                        cellButton.Content = "M";
+                        cellButton.Background = Brushes.Red;
+                    } else
+                    {
+                        int nearMines = CountNearMines(row, col);
+                        cellButton.Content = nearMines > 0 ? nearMines.ToString() : " ";
+                    }
 
                     Grid.SetRow(cellButton, row);
                     Grid.SetColumn(cellButton, col);
