@@ -63,7 +63,7 @@ namespace Minesweeper
             Grid gameField = new Grid();
             GamePanel.Children.Clear();
             GamePanel.Children.Add(gameField);
-            gameField.Margin = new Thickness(80, 130, 80, 10);
+            gameField.Margin = new Thickness(50, 50, 50, 50);
 
             for (int i = 0; i < _gameFieldHight; i++)
             {
