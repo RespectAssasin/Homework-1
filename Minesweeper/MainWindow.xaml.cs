@@ -53,6 +53,12 @@ namespace Minesweeper
                 gameField.RowDefinitions.Add(newRow);
             }
 
+            for (int i = 0; i < _gameFieldWidth; i++)
+            {
+                ColumnDefinition newColumn = new ColumnDefinition();
+                gameField.ColumnDefinitions.Add(newColumn);
+            }
+
         }
 
     }
