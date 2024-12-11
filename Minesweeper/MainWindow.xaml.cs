@@ -26,6 +26,7 @@ namespace Minesweeper
         private float _minesPercent = 0.15f;
         private bool [,] _gameField;
         private int _minesNumber;
+        private bool _firstClick = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,8 +36,20 @@ namespace Minesweeper
         Random rand = new Random();
         private Button[,] _buttons;
 
+        private void ClearArr(bool[,] arr)
+        {
+            for (int i = 0; i < _gameFieldWidth; i++)
+            {
+                for (int j = 0; j < _gameFieldHight; j++)
+                {
+                    arr[i, j] = false;
+                }
+            }
+        }
+
         private void GenerateGameField()
         {
+            //ClearArr(_gameField);
             _gameField = new bool[_gameFieldWidth, _gameFieldHight];
             _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
 
@@ -112,9 +125,6 @@ namespace Minesweeper
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
-                    int currentRow = row;
-                    int currentCol = col;
-
                     Button cellButton = new Button
                     {
                         FontSize = 16,
@@ -122,19 +132,21 @@ namespace Minesweeper
                         Background = Brushes.LightGray
                     };
 
-                    cellButton.Click += (s, e) => OnCellButtonClick(currentRow, currentCol);
+                    cellButton.Click += (s, e) => OnCellButtonClick(row, col);
 
                     _buttons[row, col] = cellButton;
 
                     if (_gameField[row, col])
                     {
-                        cellButton.Content = "M";
-                        cellButton.Background = Brushes.Red;
+                        /*cellButton.Content = "M";*/
+                        /*cellButton.Background = Brushes.Red;*/
+                        /*cellButton.Name = "M";*/
                     }
                     else
                     {
-                        int nearMines = CountNearMines(row, col);
-                        cellButton.Content = nearMines > 0 ? nearMines.ToString() : " ";
+                        //int nearMines = CountNearMines(row, col);
+
+                        //cellButton.Name = nearMines > 0 ? nearMines.ToString() : "0";
                     }
 
                     Grid.SetRow(cellButton, row);
@@ -146,6 +158,18 @@ namespace Minesweeper
 
         private void OnCellButtonClick(int row, int col)
         {
+
+            if (_firstClick)
+            {
+                if (_gameField[row,col] == true)
+                {
+                    GenerateGameField();
+                    GenerateUIField();
+                    OnCellButtonClick(row, col);
+                    _firstClick = false;
+                }
+            }
+
             if (_gameField[row, col])
             {
                 MessageBox.Show("Вы попали на мину!");
@@ -156,6 +180,11 @@ namespace Minesweeper
                 _buttons[row, col].Content = nearMines > 0 ? nearMines.ToString() : " ";
                 _buttons[row, col].IsEnabled = false;
             }
+        }
+
+        private void Start(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

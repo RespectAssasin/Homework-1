@@ -13,3 +13,18 @@ C:\Users\SystemX\Documents\GitHub\Homework\Minesweeper\obj\Debug\Minesweeper.csp
 C:\Users\SystemX\Documents\GitHub\Homework\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
 C:\Users\SystemX\Documents\GitHub\Homework\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\SystemX\Documents\GitHub\Homework\Minesweeper\obj\Debug\Minesweeper.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Debug\Minesweeper.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Debug\Minesweeper.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Debug\Minesweeper.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\Minesweeper.pdb
