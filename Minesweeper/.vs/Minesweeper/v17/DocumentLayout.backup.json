@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|c:\\users\\systemx\\documents\\github\\homework\\minesweeper\\modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 310,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ModifyButton.cs",
+              "DocumentMoniker": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\ModifyButton.cs",
+              "RelativeDocumentMoniker": "ModifyButton.cs",
+              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\ModifyButton.cs",
+              "RelativeToolTip": "ModifyButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T21:40:49.338Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -37,7 +47,9 @@
               "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-09T15:59:07.559Z"
+              "WhenOpened": "2024-12-09T15:59:07.559Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,12 +57,21 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "MainWindow.xaml.cs*",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAwwHEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T15:59:07.702Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             }
           ]
         }

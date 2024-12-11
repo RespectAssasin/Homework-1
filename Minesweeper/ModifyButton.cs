@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +16,21 @@ using System.Windows.Shapes;
 
 namespace Minesweeper
 {
-    internal class CoolButt : Button
+    internal class ModifyButton : Button
     {
         public bool IsNumber = false;
-        public bool IsMin = false;
+        public bool IsMine = false;
+        public bool IsNaN = true;
 
+        public void ToMine()
+        {
+            this.IsMine = true;
+            this.IsNaN = false;
+        }
+        public void ToNumber()
+        {
+            this.IsNumber = true;
+            this.IsNaN = false;
+        }
     }
 }

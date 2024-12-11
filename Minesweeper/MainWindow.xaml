@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1028" Width="900">
     <Grid>
-        <Grid x:Name="GamePanel" Margin="25,158,25,26"/>
+        <Grid x:Name="GamePanel" Margin="25,158,25,26" Visibility="Collapsed"/>
 
         <Grid x:Name="MenuPanel" Margin="25,24,25,897">
             <Grid.ColumnDefinitions>

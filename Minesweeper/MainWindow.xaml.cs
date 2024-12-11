@@ -24,33 +24,84 @@ namespace Minesweeper
         private int _gameFieldHight = 10;
         private int _gameFieldWidth = 10;
         private float _minesPercent = 0.15f;
-        private bool [,] _gameField;
+        //private bool [,] _gameField;
         private int _minesNumber;
         private bool _firstClick = true;
+
+        private ModifyButton[,] _modifyButtons;
+
+        Random rand = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
-            GenerateGameField();
-            GenerateUIField();
+            //CreateField();
+            //GenerateGameField();
+            //GenerateUIField();
         }
-        Random rand = new Random();
-        private CoolButt[,] _buttons;
-
-        private void ClearArr(bool[,] arr)
+        private void Start(object sender, RoutedEventArgs e)
         {
+            GamePanel.Visibility = Visibility.Visible;
+            
+            _modifyButtons = new ModifyButton[10, 10];
+            for (int i = 0; i < _gameFieldHight; i++)
+            {
+                for (int j = 0; j < _gameFieldWidth; j++)
+                {
+                    _modifyButtons[i, j] = new ModifyButton
+                    {
+                        FontSize = 16,
+                        Margin = new Thickness(2),
+                        Background = Brushes.LightGray
+                    };
+                }
+            }
+
+            CreateField();
+        }
+
+        private void CreateField()
+        {
+            Grid gameField = new Grid();
+            GamePanel.Children.Clear();
+            GamePanel.Children.Add(gameField);
+            gameField.Margin = new Thickness(50);
+
+            for (int i = 0; i < _gameFieldHight; i++)
+            {
+                RowDefinition newRow = new RowDefinition();
+                gameField.RowDefinitions.Add(newRow);
+            }
+
             for (int i = 0; i < _gameFieldWidth; i++)
             {
-                for (int j = 0; j < _gameFieldHight; j++)
+                ColumnDefinition newColumn = new ColumnDefinition();
+                gameField.ColumnDefinitions.Add(newColumn);
+            }
+
+            for (int row = 0; row < _gameFieldHight; row++)
+            {
+                for (int col = 0; col < _gameFieldWidth; col++)
                 {
-                    arr[i, j] = false;
+                    Grid.SetRow(_modifyButtons[row, col], row);
+                    Grid.SetColumn(_modifyButtons[row, col], col);
+                    gameField.Children.Add(_modifyButtons[row, col]);
                 }
+            }
+        }
+
+        private void Button_Click()
+        {
+            if (_firstClick)
+            {
+
             }
         }
 
         private void GenerateGameField()
         {
             //ClearArr(_gameField);
-            _gameField = new bool[_gameFieldWidth, _gameFieldHight];
+            //_gameField = new bool[_gameFieldWidth, _gameFieldHight];
             _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
 
             int placedMines = 0;
@@ -69,14 +120,14 @@ namespace Minesweeper
                     _gameField[col,row] = true;
                     placedMines++;
                 }
-                /*else
+                else
                 {
                     placedMines--;
-                }*/
+                }
             }
         }
 
-        private int CountNearMines(int row, int col)
+        /*private int CountNearMines(int row, int col)
         {
             int count = 0;
 
@@ -185,11 +236,7 @@ namespace Minesweeper
                 _buttons[row, col].Content = nearMines > 0 ? nearMines.ToString() : " ";
                 _buttons[row, col].IsEnabled = false;
             }
-        }
+        }*/
 
-        private void Start(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }
