@@ -34,7 +34,7 @@ namespace Minesweeper
             GenerateUIField();
         }
         Random rand = new Random();
-        private Button[,] _buttons;
+        private CoolButt[,] _buttons;
 
         private void ClearArr(bool[,] arr)
         {
@@ -103,11 +103,11 @@ namespace Minesweeper
 
         private void GenerateUIField()
         {
-            _buttons = new Button[_gameFieldHight, _gameFieldWidth];
+            _buttons = new CoolButt[_gameFieldHight, _gameFieldWidth];
             Grid gameField = new Grid();
             GamePanel.Children.Clear();
             GamePanel.Children.Add(gameField);
-            gameField.Margin = new Thickness(50, 50, 50, 50);
+            gameField.Margin = new Thickness(50);
 
             for (int i = 0; i < _gameFieldHight; i++)
             {
@@ -125,7 +125,7 @@ namespace Minesweeper
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
-                    Button cellButton = new Button
+                    CoolButt cellButton = new CoolButt
                     {
                         FontSize = 16,
                         Margin = new Thickness(2),
@@ -134,19 +134,22 @@ namespace Minesweeper
 
                     cellButton.Click += (s, e) => OnCellButtonClick(row, col);
 
-                    _buttons[row, col] = cellButton;
-
                     if (_gameField[row, col])
                     {
-                        /*cellButton.Content = "M";*/
-                        /*cellButton.Background = Brushes.Red;*/
-                        /*cellButton.Name = "M";*/
+                        cellButton.Content = "M";
+                        cellButton.Background = Brushes.Red;
+                        //cellButton.Name = "M";
+                        cellButton.IsMin = true;
+                        _buttons[row, col] = cellButton;
+                        //_buttons[row, col].Name = "M";
                     }
                     else
                     {
-                        //int nearMines = CountNearMines(row, col);
+                        int nearMines = CountNearMines(row, col);
 
-                        //cellButton.Name = nearMines > 0 ? nearMines.ToString() : "0";
+                        //cellButton.Name = "";
+                        _buttons[row, col] = cellButton;
+                        //nearMines > 0 ? cellButton.IsNumber = true : ;
                     }
 
                     Grid.SetRow(cellButton, row);
@@ -158,13 +161,15 @@ namespace Minesweeper
 
         private void OnCellButtonClick(int row, int col)
         {
-
+            Console.WriteLine($"{row}, {col}");
             if (_firstClick)
             {
+                Console.WriteLine($"{row}, {col}");
                 if (_gameField[row,col] == true)
                 {
                     GenerateGameField();
                     GenerateUIField();
+                    Console.WriteLine($"{row}, {col}");
                     OnCellButtonClick(row, col);
                     _firstClick = false;
                 }

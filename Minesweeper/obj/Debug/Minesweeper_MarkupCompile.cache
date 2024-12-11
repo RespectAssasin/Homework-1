@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Debug\
 Minesweeper
 none
 false
-TRACE
+DEBUG;TRACE
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\App.xaml
 1219584333
 
@@ -16,5 +16,5 @@ I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максим
 13-1310406943
 MainWindow.xaml;
 
-True
+False
 
