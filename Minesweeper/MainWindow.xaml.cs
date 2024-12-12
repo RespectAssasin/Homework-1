@@ -55,6 +55,8 @@ namespace Minesweeper
                         FontSize = 16,
                         Margin = new Thickness(2),
                         Background = Brushes.LightGray,
+                        row = row,
+                        col = col
                     };
                     _modifyButtons[row, col].Click += (s, args) => Button_Click(row, col);
                 }
@@ -81,7 +83,6 @@ namespace Minesweeper
                 gameField.ColumnDefinitions.Add(newColumn);
             }
 
-            // Добавляем кнопки
             for (int row = 0; row < _gameFieldHight; row++)
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
@@ -108,13 +109,15 @@ namespace Minesweeper
                 int row = rand.Next(0, _gameFieldHight);
                 int col = rand.Next(0, _gameFieldWidth);
 
-                if (!_modifyButtons[col, row].IsMine &&
-                    (col == 0 || !_modifyButtons[col - 1, row].IsMine) &&
-                    (col == _gameFieldWidth - 1 || !_modifyButtons[col + 1, row].IsMine) &&
-                    (row == 0 || !_modifyButtons[col, row - 1].IsMine) &&
-                    (row == _gameFieldHight - 1 || !_modifyButtons[col, row + 1].IsMine))
+                if (row >= 0 && row < _gameFieldHight &&
+                    col >= 0 && col < _gameFieldWidth &&
+                    !_modifyButtons[row, col].IsMine &&
+                    (row == 0 || !_modifyButtons[row - 1, col].IsMine) &&
+                    (row == _gameFieldHight - 1 || !_modifyButtons[row + 1, col].IsMine) &&
+                    (col == 0 || !_modifyButtons[row, col - 1].IsMine) &&
+                    (col == _gameFieldWidth - 1 || !_modifyButtons[row, col + 1].IsMine))
                 {
-                    _modifyButtons[col, row].IsMine = true;
+                    _modifyButtons[row, col].IsMine = true;
                     countMines++;
                 }
             }
@@ -126,12 +129,21 @@ namespace Minesweeper
             {
                 click.row = row;
                 click.col = col;
-                while (_modifyButtons[click.row, click.col].IsMine)
+
+                if (click.row >= 0 && click.row < _gameFieldHight &&
+                    click.col >= 0 && click.col < _gameFieldWidth)
                 {
-                    GenerateField();
+                    while (_modifyButtons[click.row, click.col].IsMine)
+                    {
+                        GenerateField();
+                    }
+                    click.IsFirstClick = false;
+                    DrawField();
                 }
-                click.IsFirstClick = false;
-                DrawField();
+                else
+                {
+                    MessageBox.Show("Некорректные координаты первого клика!");
+                }
             }
         }
 
