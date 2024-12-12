@@ -21,8 +21,9 @@ namespace Minesweeper
         public bool IsNumber = false;
         public bool IsMine = false;
         public bool IsNone = true;
-        public int row = 0;
-        public int col = 0;
+        public int NearMines = 0;
+        public int Row = 0;
+        public int Col = 0;
         public void ToMine()
         {
             this.IsMine = true;

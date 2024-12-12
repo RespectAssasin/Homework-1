@@ -18,7 +18,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Button Content="Start" Grid.Column="0" Grid.Row="0" Click="Start" Margin="10,10,10,-81" FontSize="20"/>
+            <Button x:Name="StartButton" Content="Start" Visibility="Visible" Grid.Column="0" Grid.Row="0" Click="Start" Margin="10,10,10,-81" FontSize="20"/>
         </Grid>
     </Grid>
 
