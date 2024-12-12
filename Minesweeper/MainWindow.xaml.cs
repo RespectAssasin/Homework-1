@@ -39,6 +39,7 @@ namespace Minesweeper
         {
             GamePanel.Visibility = Visibility.Visible;
 
+            click.IsFirstClick = true;
             _modifyButtons = new ModifyButton[_gameFieldHight, _gameFieldWidth];
 
             for (int row = 0; row < _gameFieldHight; row++)
@@ -156,6 +157,18 @@ namespace Minesweeper
             }
         }
 
+        private void EndGame()
+        {
+            for (int row = 0; row < _gameFieldHight; row++)
+            {
+                for (int col = 0; col < _gameFieldWidth; col++)
+                {
+                    _modifyButtons[row,col].IsEnabled = false;
+                    StartButton.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             click.row = ((ModifyButton)sender).Row;
@@ -189,7 +202,7 @@ namespace Minesweeper
 
             }
             //MessageBox.Show($"{click.row},{click.col}");
-            /*if (sender is Button button)
+            if (sender is Button button)
             {
                 var scaleTransform = new ScaleTransform(1.0, 1.0);
                 button.RenderTransform = scaleTransform;
@@ -199,38 +212,9 @@ namespace Minesweeper
 
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, animation);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
-            }*/
+            }
             /*if (sender is Button button)
             {
-                // Устанавливаем базовую тень для кнопки
-                var shadowEffect = button.Effect as DropShadowEffect ?? new DropShadowEffect
-                {
-                    Color = Colors.Black,
-                    Direction = 315, // Направление тени (по диагонали вниз)
-                    ShadowDepth = 5, // Глубина тени
-                    BlurRadius = 10, // Размытие
-                    Opacity = 0.5    // Прозрачность
-                };
-
-                button.Effect = shadowEffect;
-
-                // Изменяем тень для эффекта "нажатия"
-                shadowEffect.ShadowDepth = 2; // Сдвиг тени ближе к кнопке
-                shadowEffect.Opacity = 0.8;  // Более выраженная тень
-
-                // Таймер для возврата тени в исходное состояние
-                Task.Delay(100).ContinueWith(_ =>
-                {
-                    Application.Current.Dispatcher.Invoke(() =>
-                    {
-                        shadowEffect.ShadowDepth = 5; // Возврат к исходному значению
-                        shadowEffect.Opacity = 0.5;
-                    });
-                });
-            }*/
-            if (sender is Button button)
-            {
-                // Устанавливаем базовую тень
                 var shadowEffect = button.Effect as DropShadowEffect ?? new DropShadowEffect
                 {
                     Color = Colors.Black,
@@ -242,16 +226,14 @@ namespace Minesweeper
 
                 button.Effect = shadowEffect;
 
-                // Анимация для сдвига тени
                 var depthAnimation = new DoubleAnimation
                 {
-                    From = 5,  // Исходная глубина
-                    To = 10,    // Глубина при нажатии
+                    From = 5,
+                    To = 10,
                     Duration = TimeSpan.FromMilliseconds(100),
-                    AutoReverse = true // Возврат в исходное состояние
+                    AutoReverse = true
                 };
 
-                // Анимация прозрачности тени
                 var opacityAnimation = new DoubleAnimation
                 {
                     From = 0.5,
@@ -260,12 +242,25 @@ namespace Minesweeper
                     AutoReverse = true
                 };
 
-                // Запуск анимаций
                 shadowEffect.BeginAnimation(DropShadowEffect.ShadowDepthProperty, depthAnimation);
                 shadowEffect.BeginAnimation(DropShadowEffect.OpacityProperty, opacityAnimation);
-            }
+            }*/
             ((ModifyButton)sender).IsEnabled = false;
 
+            if (_modifyButtons[click.row,click.col].IsMine)
+            {
+                EndGame();
+                MessageBox.Show("ХАХАХАХХАХАХАХАХХАХА\nТы проиграл!!!");
+            }
+        }
+
+        private void OpenCells(int Row, int Col)
+        {
+            for (int col = Col-1; col < Col+1;col++)
+            {
+                if (col == Col) continue;
+                
+            }
         }
 
         private int CountNearMines(int row, int col)
