@@ -24,43 +24,45 @@ namespace Minesweeper
         private int _gameFieldHight = 10;
         private int _gameFieldWidth = 10;
         private float _minesPercent = 0.15f;
-        //private bool [,] _gameField;
-        private int _minesNumber;
-        private bool _firstClick = true;
 
+
+        //private bool [,] _modifyButtons;
         private ModifyButton[,] _modifyButtons;
+
+        private UserClick click = new UserClick();
 
         Random rand = new Random();
 
         public MainWindow()
         {
             InitializeComponent();
-            //CreateField();
+            /*CreateField();
             //GenerateGameField();
-            //GenerateUIField();
+            //GenerateUIField();*/
         }
         private void Start(object sender, RoutedEventArgs e)
         {
             GamePanel.Visibility = Visibility.Visible;
             
             _modifyButtons = new ModifyButton[10, 10];
-            for (int i = 0; i < _gameFieldHight; i++)
+
+            for (int row = 0; row < _gameFieldHight; row++)
             {
-                for (int j = 0; j < _gameFieldWidth; j++)
+                for (int col = 0; col < _gameFieldWidth; col++)
                 {
-                    _modifyButtons[i, j] = new ModifyButton
+                    _modifyButtons[row, col] = new ModifyButton
                     {
                         FontSize = 16,
                         Margin = new Thickness(2),
-                        Background = Brushes.LightGray
+                        Background = Brushes.LightGray,
                     };
+                    _modifyButtons[row, col].Click += (s, args) => Button_Click(row, col);
                 }
             }
-
-            CreateField();
+            DrawField();
         }
 
-        private void CreateField()
+        private void DrawField()
         {
             Grid gameField = new Grid();
             GamePanel.Children.Clear();
@@ -79,10 +81,16 @@ namespace Minesweeper
                 gameField.ColumnDefinitions.Add(newColumn);
             }
 
+            // Добавляем кнопки
             for (int row = 0; row < _gameFieldHight; row++)
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
+                    if (_modifyButtons[row, col].Parent is Panel oldParent)
+                    {
+                        oldParent.Children.Remove(_modifyButtons[row, col]);
+                    }
+
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
                     gameField.Children.Add(_modifyButtons[row, col]);
@@ -90,18 +98,47 @@ namespace Minesweeper
             }
         }
 
-        private void Button_Click()
+        private void GenerateField()
         {
-            if (_firstClick)
-            {
+            int _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
+            int countMines = 0;
 
+            while (countMines < _minesNumber)
+            {
+                int row = rand.Next(0, _gameFieldHight);
+                int col = rand.Next(0, _gameFieldWidth);
+
+                if (!_modifyButtons[col, row].IsMine &&
+                    (col == 0 || !_modifyButtons[col - 1, row].IsMine) &&
+                    (col == _gameFieldWidth - 1 || !_modifyButtons[col + 1, row].IsMine) &&
+                    (row == 0 || !_modifyButtons[col, row - 1].IsMine) &&
+                    (row == _gameFieldHight - 1 || !_modifyButtons[col, row + 1].IsMine))
+                {
+                    _modifyButtons[col, row].IsMine = true;
+                    countMines++;
+                }
             }
         }
 
-        private void GenerateGameField()
+        private void Button_Click(int row, int col)
         {
-            //ClearArr(_gameField);
-            //_gameField = new bool[_gameFieldWidth, _gameFieldHight];
+            if (click.IsFirstClick)
+            {
+                click.row = row;
+                click.col = col;
+                while (_modifyButtons[click.row, click.col].IsMine)
+                {
+                    GenerateField();
+                }
+                click.IsFirstClick = false;
+                DrawField();
+            }
+        }
+
+        /*private void GenerateGameField()
+        {
+            //ClearArr(_modifyButtons);
+            //_modifyButtons = new bool[_gameFieldWidth, _gameFieldHight];
             _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
 
             int placedMines = 0;
@@ -111,13 +148,13 @@ namespace Minesweeper
                 int row = rand.Next(0, _gameFieldHight);
                 int col = rand.Next(0, _gameFieldWidth);
 
-                if (!_gameField[col, row] &&
-                    (col == 0 || !_gameField[col - 1, row]) &&
-                    (col == _gameFieldWidth - 1 || !_gameField[col + 1, row]) &&
-                    (row == 0 || !_gameField[col, row - 1]) &&
-                    (row == _gameFieldHight - 1 || !_gameField[col, row + 1]))
+                if (!_modifyButtons[col, row] &&
+                    (col == 0 || !_modifyButtons[col - 1, row]) &&
+                    (col == _gameFieldWidth - 1 || !_modifyButtons[col + 1, row]) &&
+                    (row == 0 || !_modifyButtons[col, row - 1]) &&
+                    (row == _gameFieldHight - 1 || !_modifyButtons[col, row + 1]))
                 {
-                    _gameField[col,row] = true;
+                    _modifyButtons[col,row] = true;
                     placedMines++;
                 }
                 else
@@ -142,7 +179,7 @@ namespace Minesweeper
                         newCol >= 0 && newCol < _gameFieldWidth &&
                         !(i == 0 && j == 0)) 
                     {
-                        if (_gameField[newRow, newCol])
+                        if (_modifyButtons[newRow, newCol])
                         {
                             count++;
                         }
@@ -185,7 +222,7 @@ namespace Minesweeper
 
                     cellButton.Click += (s, e) => OnCellButtonClick(row, col);
 
-                    if (_gameField[row, col])
+                    if (_modifyButtons[row, col])
                     {
                         cellButton.Content = "M";
                         cellButton.Background = Brushes.Red;
@@ -213,20 +250,20 @@ namespace Minesweeper
         private void OnCellButtonClick(int row, int col)
         {
             Console.WriteLine($"{row}, {col}");
-            if (_firstClick)
+            if (click)
             {
                 Console.WriteLine($"{row}, {col}");
-                if (_gameField[row,col] == true)
+                if (_modifyButtons[row,col] == true)
                 {
                     GenerateGameField();
                     GenerateUIField();
                     Console.WriteLine($"{row}, {col}");
                     OnCellButtonClick(row, col);
-                    _firstClick = false;
+                    click = false;
                 }
             }
 
-            if (_gameField[row, col])
+            if (_modifyButtons[row, col])
             {
                 MessageBox.Show("Вы попали на мину!");
             }

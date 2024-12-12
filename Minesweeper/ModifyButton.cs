@@ -20,17 +20,21 @@ namespace Minesweeper
     {
         public bool IsNumber = false;
         public bool IsMine = false;
-        public bool IsNaN = true;
+        public bool IsNone = true;
 
         public void ToMine()
         {
             this.IsMine = true;
-            this.IsNaN = false;
+            this.IsNone = false;
         }
         public void ToNumber()
         {
             this.IsNumber = true;
-            this.IsNaN = false;
+            this.IsNone = false;
+        }
+        public void DeActive()
+        {
+            this.IsEnabled = false;
         }
     }
 }
