@@ -198,7 +198,7 @@ namespace Minesweeper
                 {
                     MessageBox.Show($" {click.row}, {click.col}Некорректные координаты первого клика!");
                 }
-
+                OpenCells(click.row, click.col);
 
             }
             //MessageBox.Show($"{click.row},{click.col}");
@@ -259,7 +259,20 @@ namespace Minesweeper
             for (int col = Col-1; col < Col+1;col++)
             {
                 if (col == Col) continue;
-                
+                if (_modifyButtons[Row, col].IsNone) // обработать края
+                {
+                    OpenCells(Row, col);
+                    _modifyButtons[Row,col].IsEnabled = false;
+                }
+            }
+            for (int row = Row - 1; row < Col + 1; row++)
+            {
+                if (row == Row) continue;
+                if (_modifyButtons[row, Col].IsNone)
+                {
+                    OpenCells(Col, row);
+                    _modifyButtons[row, Col].IsEnabled = false;
+                }
             }
         }
 
