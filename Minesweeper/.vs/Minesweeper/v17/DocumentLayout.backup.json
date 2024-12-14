@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|solutionrelative:modifybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1048B8AB-CD27-4807-ADF0-B2CAEEAE6286}|Minesweeper.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\userclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,13 +30,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ModifyButton.cs",
               "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\ModifyButton.cs",
               "RelativeDocumentMoniker": "ModifyButton.cs",
               "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\ModifyButton.cs",
               "RelativeToolTip": "ModifyButton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T21:40:49.338Z",
               "IsPinned": true,
@@ -53,11 +53,12 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T13:25:09.244Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -65,7 +66,8 @@
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-09T15:59:07.559Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,9 +75,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAnwCEBAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\Minesweeper\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "MainWindow.xaml.cs*",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAmwMcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T15:59:07.702Z",
               "IsPinned": true,

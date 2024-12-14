@@ -22,6 +22,7 @@ namespace Minesweeper
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool EndGameStatus = false;
         private int _gameFieldHight = 10;
         private int _gameFieldWidth = 10;
         private float _minesPercent = 0.15f;
@@ -89,10 +90,21 @@ namespace Minesweeper
                     {
                         oldParent.Children.Remove(_modifyButtons[row, col]);
                     }
+                    if (EndGameStatus)
+                    {
+                        if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
+                        if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
+                        _modifyButtons[row, col].Click -= (s, args) => Button_Click(s, args);                                       //доделать
+                        _modifyButtons[row, col].MouseRightButtonDown -= (s, args) => FlagButton_Click(s, args);
+                        //_modifyButtons[row, col].IsEnabled = false;
+                    } else
+                    {
+                        if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
+                    }
 
                     //if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
-                    if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
 
+                    //Console.WriteLine($"Row: {row}, Col: {col}, IsNumber: {_modifyButtons[row, col].IsNumber}, IsActive: {_modifyButtons[row, col].IsActive}");
 
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
@@ -113,6 +125,7 @@ namespace Minesweeper
                     _modifyButtons[row, col].IsMine = false;
                     _modifyButtons[row, col].IsNumber = false;
                     _modifyButtons[row, col].IsNone = true;
+                    _modifyButtons[row, col].IsActive = false;
                 }
             }
 
@@ -152,14 +165,8 @@ namespace Minesweeper
 
         private void EndGame()
         {
-            for (int row = 0; row < _gameFieldHight; row++)
-            {
-                for (int col = 0; col < _gameFieldWidth; col++)
-                {
-                    _modifyButtons[row, col].Hide();
-                    StartButton.Visibility = Visibility.Visible;
-                }
-            }
+            EndGameStatus = true;
+            StartButton.Visibility = Visibility.Visible;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -171,9 +178,9 @@ namespace Minesweeper
             {
                 GenerateField();
                 while (_modifyButtons[click.row, click.col].IsMine || _modifyButtons[click.row, click.col].IsNumber) GenerateField();
-                
+
                 click.IsFirstClick = false;
-                
+
                 DrawField();
             }
 
@@ -188,7 +195,9 @@ namespace Minesweeper
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, animation);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
             }*/
+
             OpenCells(click.row, click.col);
+            DrawField();//боль
             /*if (sender is Button button)
             {
                 var shadowEffect = button.Effect as DropShadowEffect ?? new DropShadowEffect
@@ -225,7 +234,8 @@ namespace Minesweeper
             if (_modifyButtons[click.row, click.col].IsMine)
             {
                 EndGame();
-                MessageBox.Show("Ты проиграл!!!\nБугага");
+                DrawField();
+                MessageBox.Show("Поздраляю, вы взорвались!!!\nСиквел игры \"Собери себя по частям\" находится в разработке, не ждите");
             }
         }
 
@@ -234,11 +244,10 @@ namespace Minesweeper
             if (row < 0 || row >= _gameFieldHight || col < 0 || col >= _gameFieldWidth)
                 return;
 
-            if (!_modifyButtons[row, col].IsEnabled || _modifyButtons[row, col].IsMine)
+            if (_modifyButtons[row, col].IsActive || _modifyButtons[row, col].IsMine)
                 return;
 
             _modifyButtons[row, col].Hide();
-            //_modifyButtons[row, col].Activated();
 
             if (_modifyButtons[row, col].IsNumber)
                 return;
@@ -249,6 +258,7 @@ namespace Minesweeper
                 {
                     if (i == 0 && j == 0)
                         continue;
+
                     OpenCells(row + i, col + j);
                 }
             }
