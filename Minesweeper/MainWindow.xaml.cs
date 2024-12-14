@@ -89,17 +89,8 @@ namespace Minesweeper
                         oldParent.Children.Remove(_modifyButtons[row, col]);
                     }
 
-                    if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
+                    //if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
                     if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
-
-                    /*if (_modifyButtons[row, col].IsMine)
-                    {
-                        _modifyButtons[row, col].Background = Brushes.Red;
-                    }
-                    if (_modifyButtons[row, col].IsNumber)
-                    {
-                        _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
-                    }*/
 
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
@@ -163,7 +154,7 @@ namespace Minesweeper
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
-                    _modifyButtons[row,col].IsEnabled = false;
+                    _modifyButtons[row, col].Hide();
                     StartButton.Visibility = Visibility.Visible;
                 }
             }
@@ -176,33 +167,15 @@ namespace Minesweeper
 
             if (click.IsFirstClick)
             {
-                /*if (sender is ModifyButton button)
-                {
-                    click.row = button.Row;
-                    click.col = button.Col;
-                }*/
-
-                if (click.row >= 0 && click.row < _gameFieldHight &&
-                    click.col >= 0 && click.col < _gameFieldWidth)
-                {
-                    GenerateField();
-                    while (_modifyButtons[click.row, click.col].IsMine || _modifyButtons[click.row, click.col].IsNumber)
-                    {
-                        GenerateField();
-                    }
-                    click.IsFirstClick = false;
-                    DrawField();
-                    //MessageBox.Show($"первое {click.row},{click.col}");
-                }
-                else
-                {
-                    MessageBox.Show($" {click.row}, {click.col}Некорректные координаты первого клика!");
-                }
+                GenerateField();
+                while (_modifyButtons[click.row, click.col].IsMine || _modifyButtons[click.row, click.col].IsNumber) GenerateField();
                 
-
+                click.IsFirstClick = false;
+                
+                DrawField();
             }
-            //MessageBox.Show($"{click.row},{click.col}");
-            if (sender is Button button)
+
+            /*if (sender is Button button)
             {
                 var scaleTransform = new ScaleTransform(1.0, 1.0);
                 button.RenderTransform = scaleTransform;
@@ -212,7 +185,7 @@ namespace Minesweeper
 
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, animation);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
-            }
+            }*/
             OpenCells(click.row, click.col);
             /*if (sender is Button button)
             {
@@ -246,33 +219,36 @@ namespace Minesweeper
                 shadowEffect.BeginAnimation(DropShadowEffect.ShadowDepthProperty, depthAnimation);
                 shadowEffect.BeginAnimation(DropShadowEffect.OpacityProperty, opacityAnimation);
             }*/
-            ((ModifyButton)sender).IsEnabled = false;
 
-            if (_modifyButtons[click.row,click.col].IsMine)
+            if (_modifyButtons[click.row, click.col].IsMine)
             {
                 EndGame();
                 MessageBox.Show("\nТы проиграл!!!");
             }
         }
 
-        private void OpenCells(int Row, int Col)
+        private void OpenCells(int row, int col)
         {
-            for (int col = Col-1; col < Col+1;col++)
+            if (row < 0 || row >= _gameFieldHight || col < 0 || col >= _gameFieldWidth)
+                return;
+
+            if (!_modifyButtons[row, col].IsEnabled || _modifyButtons[row, col].IsMine)
+                return;
+
+            _modifyButtons[row, col].Hide();
+            _modifyButtons[row, col].Activated();
+
+            if (_modifyButtons[row, col].IsNumber)
+                return;
+
+            for (int i = -1; i <= 1; i++)
             {
-                if (col == Col || col == _gameFieldWidth || col == 0) continue;
-                if (_modifyButtons[Row, col].IsNone) // обработать края
+                for (int j = -1; j <= 1; j++)
                 {
-                    OpenCells(Row, col);
-                    _modifyButtons[Row,col].IsEnabled = false;
-                }
-            }
-            for (int row = Row - 1; row < Row + 1; row++)
-            {
-                if (row == Row || row == _gameFieldHight || row == 0) continue;
-                if (_modifyButtons[row, Col].IsNone)
-                {
-                    OpenCells(row, Col);
-                    _modifyButtons[row, Col].IsEnabled = false;
+                    if (i == 0 && j == 0)
+                        continue;
+
+                    OpenCells(row + i, col + j);
                 }
             }
         }
