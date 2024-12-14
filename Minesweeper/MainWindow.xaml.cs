@@ -198,7 +198,7 @@ namespace Minesweeper
                 {
                     MessageBox.Show($" {click.row}, {click.col}Некорректные координаты первого клика!");
                 }
-                OpenCells(click.row, click.col);
+                
 
             }
             //MessageBox.Show($"{click.row},{click.col}");
@@ -213,6 +213,7 @@ namespace Minesweeper
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, animation);
                 scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
             }
+            OpenCells(click.row, click.col);
             /*if (sender is Button button)
             {
                 var shadowEffect = button.Effect as DropShadowEffect ?? new DropShadowEffect
@@ -250,7 +251,7 @@ namespace Minesweeper
             if (_modifyButtons[click.row,click.col].IsMine)
             {
                 EndGame();
-                MessageBox.Show("ХАХАХАХХАХАХАХАХХАХА\nТы проиграл!!!");
+                MessageBox.Show("\nТы проиграл!!!");
             }
         }
 
@@ -258,19 +259,19 @@ namespace Minesweeper
         {
             for (int col = Col-1; col < Col+1;col++)
             {
-                if (col == Col) continue;
+                if (col == Col || col == _gameFieldWidth || col == 0) continue;
                 if (_modifyButtons[Row, col].IsNone) // обработать края
                 {
                     OpenCells(Row, col);
                     _modifyButtons[Row,col].IsEnabled = false;
                 }
             }
-            for (int row = Row - 1; row < Col + 1; row++)
+            for (int row = Row - 1; row < Row + 1; row++)
             {
-                if (row == Row) continue;
+                if (row == Row || row == _gameFieldHight || row == 0) continue;
                 if (_modifyButtons[row, Col].IsNone)
                 {
-                    OpenCells(Col, row);
+                    OpenCells(row, Col);
                     _modifyButtons[row, Col].IsEnabled = false;
                 }
             }
