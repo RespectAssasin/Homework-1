@@ -37,11 +37,12 @@ namespace Minesweeper
         }
         public void Hide()
         {
+            this.IsActive = true;
             this.IsEnabled = false;
         }
-        public void Activated()
+        /*public void Activated()
         {
             this.IsActive = true;
-        }
+        }*/
     }
 }

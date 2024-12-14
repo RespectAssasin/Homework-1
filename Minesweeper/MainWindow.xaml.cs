@@ -55,6 +55,7 @@ namespace Minesweeper
                         Col = col
                     };
                     _modifyButtons[row, col].Click += (s, args) => Button_Click(s, args);
+                    _modifyButtons[row, col].MouseRightButtonDown += (s, args) => FlagButton_Click(s, args);
                 }
             }
             DrawField();
@@ -90,7 +91,8 @@ namespace Minesweeper
                     }
 
                     //if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
-                    if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
+                    if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
+
 
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
@@ -223,7 +225,7 @@ namespace Minesweeper
             if (_modifyButtons[click.row, click.col].IsMine)
             {
                 EndGame();
-                MessageBox.Show("\nТы проиграл!!!");
+                MessageBox.Show("Ты проиграл!!!\nБугага");
             }
         }
 
@@ -236,7 +238,7 @@ namespace Minesweeper
                 return;
 
             _modifyButtons[row, col].Hide();
-            _modifyButtons[row, col].Activated();
+            //_modifyButtons[row, col].Activated();
 
             if (_modifyButtons[row, col].IsNumber)
                 return;
@@ -247,12 +249,10 @@ namespace Minesweeper
                 {
                     if (i == 0 && j == 0)
                         continue;
-
                     OpenCells(row + i, col + j);
                 }
             }
         }
-
         private int CountNearMines(int row, int col)
         {
             int count = 0;
@@ -280,121 +280,10 @@ namespace Minesweeper
             return count;
         }
 
-        /*private void GenerateGameField()
+        private void FlagButton_Click(object sender, RoutedEventArgs e)
         {
-            //ClearArr(_modifyButtons);
-            //_modifyButtons = new bool[_gameFieldWidth, _gameFieldHight];
-            _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
 
-            int placedMines = 0;
-
-            while (placedMines < _minesNumber)
-            {
-                int row = rand.Next(0, _gameFieldHight);
-                int col = rand.Next(0, _gameFieldWidth);
-
-                if (!_modifyButtons[col, row] &&
-                    (col == 0 || !_modifyButtons[col - 1, row]) &&
-                    (col == _gameFieldWidth - 1 || !_modifyButtons[col + 1, row]) &&
-                    (row == 0 || !_modifyButtons[col, row - 1]) &&
-                    (row == _gameFieldHight - 1 || !_modifyButtons[col, row + 1]))
-                {
-                    _modifyButtons[col,row] = true;
-                    placedMines++;
-                }
-                else
-                {
-                    placedMines--;
-                }
-            }
-        }*/
-
-
-        /*private void GenerateUIField()
-        {
-            _buttons = new CoolButt[_gameFieldHight, _gameFieldWidth];
-            Grid gameField = new Grid();
-            GamePanel.Children.Clear();
-            GamePanel.Children.Add(gameField);
-            gameField.Margin = new Thickness(50);
-
-            for (int i = 0; i < _gameFieldHight; i++)
-            {
-                RowDefinition newRow = new RowDefinition();
-                gameField.RowDefinitions.Add(newRow);
-            }
-
-            for (int i = 0; i < _gameFieldWidth; i++)
-            {
-                ColumnDefinition newColumn = new ColumnDefinition();
-                gameField.ColumnDefinitions.Add(newColumn);
-            }
-
-            for (int row = 0; row < _gameFieldHight; row++)
-            {
-                for (int col = 0; col < _gameFieldWidth; col++)
-                {
-                    CoolButt cellButton = new CoolButt
-                    {
-                        FontSize = 16,
-                        Margin = new Thickness(2),
-                        Background = Brushes.LightGray
-                    };
-
-                    cellButton.Click += (s, e) => OnCellButtonClick(row, col);
-
-                    if (_modifyButtons[row, col])
-                    {
-                        cellButton.Content = "M";
-                        cellButton.Background = Brushes.Red;
-                        //cellButton.Name = "M";
-                        cellButton.IsMin = true;
-                        _buttons[row, col] = cellButton;
-                        //_buttons[row, col].Name = "M";
-                    }
-                    else
-                    {
-                        int nearMines = CountNearMines(row, col);
-
-                        //cellButton.Name = "";
-                        _buttons[row, col] = cellButton;
-                        //nearMines > 0 ? cellButton.IsNumber = true : ;
-                    }
-
-                    Grid.SetRow(cellButton, row);
-                    Grid.SetColumn(cellButton, col);
-                    gameField.Children.Add(cellButton);
-                }
-            }
-        }*/
-
-        /*private void OnCellButtonClick(int row, int col)
-        {
-            Console.WriteLine($"{row}, {col}");
-            if (click)
-            {
-                Console.WriteLine($"{row}, {col}");
-                if (_modifyButtons[row,col] == true)
-                {
-                    GenerateGameField();
-                    GenerateUIField();
-                    Console.WriteLine($"{row}, {col}");
-                    OnCellButtonClick(row, col);
-                    click = false;
-                }
-            }
-
-            if (_modifyButtons[row, col])
-            {
-                MessageBox.Show("Вы попали на мину!");
-            }
-            else
-            {
-                int nearMines = CountNearMines(row, col);
-                _buttons[row, col].Content = nearMines > 0 ? nearMines.ToString() : " ";
-                _buttons[row, col].IsEnabled = false;
-            }
-        }*/
+        }
 
     }
 }
