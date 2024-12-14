@@ -9,16 +9,20 @@
     <Grid>
         <Grid x:Name="GamePanel" Margin="25,158,25,26" Visibility="Collapsed"/>
 
-        <Grid x:Name="MenuPanel" Margin="25,24,25,897">
+        <Grid x:Name="MenuPanel" Margin="25,24,25,883">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="StartButton" Content="Start" Visibility="Visible" Grid.Column="0" Grid.Row="0" Click="Start" Margin="10,10,10,-81" FontSize="20"/>
+            <Button x:Name="StartButton" Content="Start" Visibility="Visible" Grid.Column="0" Grid.Row="0" Click="Start" Margin="10,10,10,-17" FontSize="20"/>
+            <Slider x:Name="Slider" Grid.Column="1" Grid.Row="0" Minimum="5" Maximum="30" Margin="0,46,0,-13" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" />
+            <TextBlock x:Name="SliderNumText" Visibility="Visible" Text="5" Grid.Column="1" Grid.Row="0" Height="36" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30" Width="16" RenderTransformOrigin="0.882,1.39" Margin="0,12,0,0" />
+            <TextBlock x:Name="Timer"  Text="00:00:00" Visibility="Visible" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Width="148" Height="42" Margin="0,22,0,0" />
         </Grid>
     </Grid>
 

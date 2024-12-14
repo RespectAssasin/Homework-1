@@ -23,12 +23,13 @@ namespace Minesweeper
     public partial class MainWindow : Window
     {
         private bool EndGameStatus = false;
-        private int _gameFieldHight = 10;
-        private int _gameFieldWidth = 10;
+        private int _gameFieldHight = 5;
+        private int _gameFieldWidth = 5;
         private float _minesPercent = 0.15f;
 
         private ModifyButton[,] _modifyButtons;
         private UserClick click = new UserClick();
+        private TextBlock textBlock;
 
         Random rand = new Random();
         public MainWindow()
@@ -38,6 +39,7 @@ namespace Minesweeper
 
         private void Start(object sender, RoutedEventArgs e)
         {
+            EndGameStatus = false;
             GamePanel.Visibility = Visibility.Visible;
 
             click.IsFirstClick = true;
@@ -92,12 +94,24 @@ namespace Minesweeper
                     }
                     if (EndGameStatus)
                     {
-                        if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
+                        textBlock = new TextBlock
+                        {
+                            Background = Brushes.Red
+                        };
+
+                        _modifyButtons[row, col].IsEnabled = false;
+                        if (_modifyButtons[row, col].IsMine)
+                        {
+                            Grid.SetRow(textBlock,row);
+                            Grid.SetColumn(textBlock,col);
+                            gameField.Children.Add(textBlock);
+                        }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
-                        _modifyButtons[row, col].Click -= (s, args) => Button_Click(s, args);                                       //доделать
-                        _modifyButtons[row, col].MouseRightButtonDown -= (s, args) => FlagButton_Click(s, args);
-                        //_modifyButtons[row, col].IsEnabled = false;
-                    } else
+                        /*_modifyButtons[row, col].Click -= (s, args) => Button_Click(s, args);                                       //доделать
+                        _modifyButtons[row, col].MouseRightButtonDown -= (s, args) => FlagButton_Click(s, args);*/
+
+                    }
+                    else
                     {
                         if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
                     }
@@ -234,7 +248,15 @@ namespace Minesweeper
             if (_modifyButtons[click.row, click.col].IsMine)
             {
                 EndGame();
+                /*for (int row = 0; row < _gameFieldHight; row++)
+                {
+                    for (int col = 0; col < _gameFieldWidth; col++)
+                    {
+                        _modifyButtons[row, col].IsEnabled = false;
+                    }
+                }*/
                 DrawField();
+
                 MessageBox.Show("Поздраляю, вы взорвались!!!\nСиквел игры \"Собери себя по частям\" находится в разработке, не ждите");
             }
         }
@@ -289,7 +311,6 @@ namespace Minesweeper
             }
             return count;
         }
-
         private void FlagButton_Click(object sender, RoutedEventArgs e)
         {
 
