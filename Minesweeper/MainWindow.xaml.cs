@@ -37,6 +37,7 @@ namespace Minesweeper
         public MainWindow()
         {
             InitializeComponent();
+            SliderNumText = new TextBlock();
         }
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -370,8 +371,10 @@ namespace Minesweeper
 
         private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            int num = (int)DiffSlider.Value;
-            SliderNumText.Text = num.ToString();
+            if (SliderNumText != null)
+            {
+                SliderNumText.Text = e.OldValue.ToString("F0");
+            }
         }
     }
 }
