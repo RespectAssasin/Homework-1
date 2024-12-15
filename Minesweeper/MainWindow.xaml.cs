@@ -31,7 +31,6 @@ namespace Minesweeper
 
         private ModifyButton[,] _modifyButtons;
         private UserClick click = new UserClick();
-        private TextBlock textBlock;
 
         Random rand = new Random();
 
@@ -50,7 +49,6 @@ namespace Minesweeper
 
             _isTimerRunning = true;
             _elapsedSeconds = 0;
-            SliderNumText.Text = "Время: 0 сек.";
 
             var timerTask = RunTimer();
             var mainGameTask = RunGameProgram();
@@ -58,28 +56,26 @@ namespace Minesweeper
             await Task.WhenAll(timerTask, mainGameTask);
 
             _isTimerRunning = false;
-            MessageBox.Show("Игра завершена!");
+            //MessageBox.Show("Игра завершена!");
         }
 
         private async Task RunTimer()
         {
-            var stopwatch = System.Diagnostics.Stopwatch.StartNew();             //сделать через DateTime
+            DateTime startTime = DateTime.Now;
 
             while (_isTimerRunning)
             {
                 await Task.Delay(50);
-                _elapsedSeconds = (int)(stopwatch.ElapsedMilliseconds / 1000);
-                _elapsedMilliseconds = (int)(stopwatch.ElapsedMilliseconds % 1000);
+                TimeSpan elapsedTime = DateTime.Now - startTime;
 
                 Dispatcher.Invoke(() =>
                 {
-                    Timer.Text = $"{_elapsedSeconds}:{_elapsedMilliseconds}";
+                    Timer.Text = $"{elapsedTime.Seconds}:{elapsedTime.Milliseconds:D3}";
                 });
             }
-
-            stopwatch.Stop();
             Timer.Text = "0:000";
         }
+
 
         private async Task RunGameProgram()
         {
@@ -146,7 +142,7 @@ namespace Minesweeper
                     }
                     if (EndGameStatus)
                     {
-                        textBlock = new TextBlock
+                        TextBlock textBlock = new TextBlock
                         {
                             Background = Brushes.Red
                         };
@@ -154,9 +150,11 @@ namespace Minesweeper
                         _modifyButtons[row, col].IsEnabled = false;
                         if (_modifyButtons[row, col].IsMine)
                         {
+
                             Grid.SetRow(textBlock, row);
                             Grid.SetColumn(textBlock, col);
                             gameField.Children.Add(textBlock);
+                            continue;
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
                     }
@@ -164,10 +162,10 @@ namespace Minesweeper
                     {
                         if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
                     }
-
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
                     gameField.Children.Add(_modifyButtons[row, col]);
+
                 }
             }
         }
@@ -177,7 +175,7 @@ namespace Minesweeper
             int _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
             int countMines = 0;
 
-            for (int row = 0; row < _gameFieldHight; row++)
+            /*for (int row = 0; row < _gameFieldHight; row++)
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
@@ -186,9 +184,17 @@ namespace Minesweeper
                     _modifyButtons[row, col].IsNone = true;
                     _modifyButtons[row, col].IsActive = false;
                 }
+            }*/
+
+            foreach (var butt in _modifyButtons)
+            {
+                _modifyButtons[butt.Row, butt.Col].IsMine = false;
+                _modifyButtons[butt.Row, butt.Col].IsNumber = false;
+                _modifyButtons[butt.Row, butt.Col].IsNone = true;
+                _modifyButtons[butt.Row, butt.Col].IsActive = false;
             }
 
-            while (countMines < _minesNumber)
+                while (countMines < _minesNumber)
             {
                 int row = rand.Next(0, _gameFieldHight);
                 int col = rand.Next(0, _gameFieldWidth);
@@ -208,7 +214,7 @@ namespace Minesweeper
                 }
             }
 
-            for (int row = 0; row < _gameFieldHight; row++)
+            /*for (int row = 0; row < _gameFieldHight; row++)
             {
                 for (int col = 0; col < _gameFieldWidth; col++)
                 {
@@ -219,12 +225,23 @@ namespace Minesweeper
                         _modifyButtons[row, col].NearMines = CountNearMines(row, col);
                     }
                 }
+            }*/
+            foreach (var butt in _modifyButtons)
+            {
+                if (CountNearMines(butt.Row, butt.Col) > 0)
+                {
+                    _modifyButtons[butt.Row, butt.Col].IsNumber = true;
+                    _modifyButtons[butt.Row, butt.Col].IsNone = false;
+                    _modifyButtons[butt.Row, butt.Col].NearMines = CountNearMines(butt.Row, butt.Col);
+                }
             }
         }
 
         private void EndGame()
         {
+            _isTimerRunning = false;
             EndGameStatus = true;
+            DrawField();
             StartButton.Visibility = Visibility.Visible;
         }
 
@@ -238,7 +255,6 @@ namespace Minesweeper
                 GenerateField();
                 while (_modifyButtons[click.row, click.col].IsMine || _modifyButtons[click.row, click.col].IsNumber) GenerateField();
                 click.IsFirstClick = false;
-
                 DrawField();
             }
 
@@ -249,10 +265,18 @@ namespace Minesweeper
             {
                 EndGame();
                 MessageBox.Show("Поздравляем, вы взорвались!");
-
             }
         }
 
+        private bool CheckWinCondition()
+        {
+            foreach (var button in _modifyButtons)
+            {
+                if (button.IsMine && !button.IsFlagged) return false;
+                if (!button.IsMine && button.IsFlagged) return false;
+            }
+            return true;
+        }
         private void OpenCells(int row, int col)
         {
             if (row < 0 || row >= _gameFieldHight || col < 0 || col >= _gameFieldWidth)
@@ -303,8 +327,14 @@ namespace Minesweeper
         private void FlagButton_Click(object sender, RoutedEventArgs e)
         {
             var button = (ModifyButton)sender;
-            button.IsFlagged = !button.IsFlagged; 
+            button.IsFlagged = !button.IsFlagged;
             button.Content = button.IsFlagged ? "🚩" : null;
+
+            if (CheckWinCondition())
+            {
+                EndGame();
+                MessageBox.Show("Поздравляем, вы выиграли!");
+            }
         }
 
         private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
