@@ -142,18 +142,27 @@ namespace Minesweeper
                     }
                     if (EndGameStatus)
                     {
-                        TextBlock textBlock = new TextBlock
-                        {
-                            Background = Brushes.Red
-                        };
 
                         _modifyButtons[row, col].IsEnabled = false;
                         if (_modifyButtons[row, col].IsMine)
                         {
+                            Image flagImage = new Image
+                            {
+                                Source = new BitmapImage(new Uri("pack://application:,,,/Images/Mine.png")),
+                                Stretch = Stretch.Uniform,
+                                VerticalAlignment = VerticalAlignment.Stretch,
+                                HorizontalAlignment = HorizontalAlignment.Stretch
+                            };
 
-                            Grid.SetRow(textBlock, row);
-                            Grid.SetColumn(textBlock, col);
-                            gameField.Children.Add(textBlock);
+                            Viewbox viewbox = new Viewbox
+                            {
+                                Stretch = Stretch.Uniform,
+                                Child = flagImage
+                            };
+
+                            Grid.SetRow(viewbox, row);
+                            Grid.SetColumn(viewbox, col);
+                            gameField.Children.Add(viewbox);
                             continue;
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
@@ -194,7 +203,7 @@ namespace Minesweeper
                 _modifyButtons[butt.Row, butt.Col].IsActive = false;
             }
 
-                while (countMines < _minesNumber)
+            while (countMines < _minesNumber)
             {
                 int row = rand.Next(0, _gameFieldHight);
                 int col = rand.Next(0, _gameFieldWidth);
@@ -328,9 +337,31 @@ namespace Minesweeper
         {
             var button = (ModifyButton)sender;
             button.IsFlagged = !button.IsFlagged;
-            button.Content = button.IsFlagged ? "🚩" : null;
 
-            if (CheckWinCondition())
+            if (button.IsFlagged)
+            {
+                Image flagImage = new Image
+                {
+                    Source = new BitmapImage(new Uri("pack://application:,,,/Images/Flag.png")),
+                    Stretch = Stretch.Uniform,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    HorizontalAlignment = HorizontalAlignment.Stretch
+                };
+
+                Viewbox viewbox = new Viewbox
+                {
+                    Stretch = Stretch.Uniform,
+                    Child = flagImage
+                };
+
+                button.Content = viewbox;
+            }
+            else
+            {
+                button.Content = null;
+            }
+            ///////////////////////////////////////////////////////////////
+            if (CheckWinCondition() && !click.IsFirstClick)
             {
                 EndGame();
                 MessageBox.Show("Поздравляем, вы выиграли!");
