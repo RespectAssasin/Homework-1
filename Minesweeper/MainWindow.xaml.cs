@@ -20,6 +20,7 @@ namespace Minesweeper
 {
     public partial class MainWindow : Window
     {
+        private bool _isInitialized = false;
         private bool _isTimerRunning;
         private int _elapsedSeconds;
         int _elapsedMilliseconds;
@@ -37,7 +38,7 @@ namespace Minesweeper
         public MainWindow()
         {
             InitializeComponent();
-            SliderNumText = new TextBlock();
+            _isInitialized = true;
         }
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -371,12 +372,12 @@ namespace Minesweeper
 
         private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (SliderNumText != null)
+            if (!_isInitialized) return; // Игнорировать вызов до полной инициализации
+
+            if (SliderNumText != null && DiffSlider != null)
             {
-                SliderNumText.Text = e.OldValue.ToString();
+                SliderNumText.Content = DiffSlider.Value.ToString();
             }
         }
     }
 }
-
-
