@@ -21,13 +21,7 @@
 
             <Button x:Name="StartButton" Content="Start" Visibility="Visible" Grid.Column="0" Grid.Row="0" Click="StartButton_Click" Margin="10,10,10,-17" FontSize="20"/>
             <Slider x:Name="DiffSlider" Grid.Column="1" Grid.Row="0" Minimum="5" Maximum="30" ValueChanged="ValueChanged" Margin="0,46,0,-13" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" />
-            <TextBlock x:Name="SliderNumText" Visibility="Visible" Text="5" Grid.Column="1" Height="36" VerticalAlignment="Center" FontSize="30" Width="20" RenderTransformOrigin="0.882,1.39" HorizontalAlignment="Center" />
-
-            <!--<TextBlock x:Name="SliderNumText" Visibility="Visible" Grid.Column="1" Grid.Row="0" 
-           Height="36" VerticalAlignment="Top" HorizontalAlignment="Center" 
-           FontSize="30" Width="16" RenderTransformOrigin="0.882,1.39" Margin="0,12,0,0" />-->
-
-
+            <TextBlock x:Name="SliderNumText" Visibility="Visible" Text="5" Grid.Column="1" Height="44" VerticalAlignment="Center" FontSize="30" Width="135" RenderTransformOrigin="0.882,1.39" HorizontalAlignment="Center" />
             <TextBlock x:Name="Timer" Text="00:00:00" Visibility="Visible" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Width="148" Height="42" Margin="0,22,0,0" />
         </Grid>
     </Grid>

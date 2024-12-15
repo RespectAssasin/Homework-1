@@ -373,7 +373,7 @@ namespace Minesweeper
         {
             if (SliderNumText != null)
             {
-                SliderNumText.Text = e.OldValue.ToString("F0");
+                SliderNumText.Text = e.OldValue.ToString();
             }
         }
     }
