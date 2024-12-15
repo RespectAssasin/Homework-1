@@ -44,7 +44,7 @@ namespace Minesweeper
         {
             if (_isTimerRunning)
             {
-                MessageBox.Show("Секундомер уже запущен!");
+                //MessageBox.Show("Секундомер уже запущен!");
                 return;
             }
 
@@ -63,7 +63,7 @@ namespace Minesweeper
 
         private async Task RunTimer()
         {
-            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();             //сделать через DateTime
 
             while (_isTimerRunning)
             {
