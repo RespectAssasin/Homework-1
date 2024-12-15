@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,11 +18,12 @@ using System.Windows.Shapes;
 
 namespace Minesweeper
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private bool _isTimerRunning;
+        private int _elapsedSeconds;
+        int _elapsedMilliseconds;
+
         private bool EndGameStatus = false;
         private int _gameFieldHight = 5;
         private int _gameFieldWidth = 5;
@@ -32,12 +34,62 @@ namespace Minesweeper
         private TextBlock textBlock;
 
         Random rand = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Start(object sender, RoutedEventArgs e)
+        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isTimerRunning)
+            {
+                MessageBox.Show("Секундомер уже запущен!");
+                return;
+            }
+
+            _isTimerRunning = true;
+            _elapsedSeconds = 0;
+            SliderNumText.Text = "Время: 0 сек.";
+
+            var timerTask = RunTimer();
+            var mainGameTask = RunGameProgram();
+
+            await Task.WhenAll(timerTask, mainGameTask);
+
+            _isTimerRunning = false;
+            MessageBox.Show("Игра завершена!");
+        }
+
+        private async Task RunTimer()
+        {
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
+            while (_isTimerRunning)
+            {
+                await Task.Delay(50);
+                _elapsedSeconds = (int)(stopwatch.ElapsedMilliseconds / 1000);
+                _elapsedMilliseconds = (int)(stopwatch.ElapsedMilliseconds % 1000);
+
+                Dispatcher.Invoke(() =>
+                {
+                    Timer.Text = $"{_elapsedSeconds}:{_elapsedMilliseconds}";
+                });
+            }
+
+            stopwatch.Stop();
+            Timer.Text = "0:000";
+        }
+
+        private async Task RunGameProgram()
+        {
+            await Task.Run(() =>
+            {
+                Dispatcher.Invoke(() => Start());
+            });
+        }
+
+        private void Start()
         {
             EndGameStatus = false;
             GamePanel.Visibility = Visibility.Visible;
@@ -102,23 +154,16 @@ namespace Minesweeper
                         _modifyButtons[row, col].IsEnabled = false;
                         if (_modifyButtons[row, col].IsMine)
                         {
-                            Grid.SetRow(textBlock,row);
-                            Grid.SetColumn(textBlock,col);
+                            Grid.SetRow(textBlock, row);
+                            Grid.SetColumn(textBlock, col);
                             gameField.Children.Add(textBlock);
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
-                        /*_modifyButtons[row, col].Click -= (s, args) => Button_Click(s, args);                                       //доделать
-                        _modifyButtons[row, col].MouseRightButtonDown -= (s, args) => FlagButton_Click(s, args);*/
-
                     }
                     else
                     {
                         if (_modifyButtons[row, col].IsNumber && _modifyButtons[row, col].IsActive) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
                     }
-
-                    //if (_modifyButtons[row, col].IsMine) _modifyButtons[row, col].Background = Brushes.Red;
-
-                    //Console.WriteLine($"Row: {row}, Col: {col}, IsNumber: {_modifyButtons[row, col].IsNumber}, IsActive: {_modifyButtons[row, col].IsActive}");
 
                     Grid.SetRow(_modifyButtons[row, col], row);
                     Grid.SetColumn(_modifyButtons[row, col], col);
@@ -192,72 +237,19 @@ namespace Minesweeper
             {
                 GenerateField();
                 while (_modifyButtons[click.row, click.col].IsMine || _modifyButtons[click.row, click.col].IsNumber) GenerateField();
-
                 click.IsFirstClick = false;
 
                 DrawField();
             }
 
-            /*if (sender is Button button)
-            {
-                var scaleTransform = new ScaleTransform(1.0, 1.0);
-                button.RenderTransform = scaleTransform;
-                button.RenderTransformOrigin = new Point(0.5, 0.5);
-
-                var animation = new DoubleAnimation(1.0, 0.9, TimeSpan.FromMilliseconds(100));
-
-                scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, animation);
-                scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, animation);
-            }*/
-
             OpenCells(click.row, click.col);
-            DrawField();//боль
-            /*if (sender is Button button)
-            {
-                var shadowEffect = button.Effect as DropShadowEffect ?? new DropShadowEffect
-                {
-                    Color = Colors.Black,
-                    Direction = 315,
-                    ShadowDepth = 5,
-                    BlurRadius = 10,
-                    Opacity = 0.5
-                };
-
-                button.Effect = shadowEffect;
-
-                var depthAnimation = new DoubleAnimation
-                {
-                    From = 5,
-                    To = 10,
-                    Duration = TimeSpan.FromMilliseconds(100),
-                    AutoReverse = true
-                };
-
-                var opacityAnimation = new DoubleAnimation
-                {
-                    From = 0.5,
-                    To = 0.8,
-                    Duration = TimeSpan.FromMilliseconds(100),
-                    AutoReverse = true
-                };
-
-                shadowEffect.BeginAnimation(DropShadowEffect.ShadowDepthProperty, depthAnimation);
-                shadowEffect.BeginAnimation(DropShadowEffect.OpacityProperty, opacityAnimation);
-            }*/
+            DrawField();
 
             if (_modifyButtons[click.row, click.col].IsMine)
             {
                 EndGame();
-                /*for (int row = 0; row < _gameFieldHight; row++)
-                {
-                    for (int col = 0; col < _gameFieldWidth; col++)
-                    {
-                        _modifyButtons[row, col].IsEnabled = false;
-                    }
-                }*/
-                DrawField();
+                MessageBox.Show("Поздравляем, вы взорвались!");
 
-                MessageBox.Show("Поздраляю, вы взорвались!!!\nСиквел игры \"Собери себя по частям\" находится в разработке, не ждите");
             }
         }
 
@@ -285,11 +277,10 @@ namespace Minesweeper
                 }
             }
         }
+
         private int CountNearMines(int row, int col)
         {
             int count = 0;
-
-            if (_modifyButtons[row, col].IsMine) return 0;
 
             for (int i = -1; i <= 1; i++)
             {
@@ -300,21 +291,27 @@ namespace Minesweeper
 
                     if (newRow >= 0 && newRow < _gameFieldHight &&
                         newCol >= 0 && newCol < _gameFieldWidth &&
-                        !(i == 0 && j == 0))
+                        _modifyButtons[newRow, newCol].IsMine)
                     {
-                        if (_modifyButtons[newRow, newCol].IsMine)
-                        {
-                            count++;
-                        }
+                        count++;
                     }
                 }
             }
             return count;
         }
+
         private void FlagButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var button = (ModifyButton)sender;
+            button.IsFlagged = !button.IsFlagged; 
+            button.Content = button.IsFlagged ? "🚩" : null;
         }
 
+        private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            //SliderNumText.Text = DiffSlider.Value.ToString();
+        }
     }
 }
+
+

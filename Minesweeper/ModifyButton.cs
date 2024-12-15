@@ -22,6 +22,7 @@ namespace Minesweeper
         public bool IsMine = false;
         public bool IsNone = true;
         public bool IsActive = false;
+        public bool IsFlagged = false;
         public int NearMines = 0;
         public int Row = 0;
         public int Col = 0;
@@ -40,9 +41,5 @@ namespace Minesweeper
             this.IsActive = true;
             this.IsEnabled = false;
         }
-        /*public void Activated()
-        {
-            this.IsActive = true;
-        }*/
     }
 }
