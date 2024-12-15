@@ -370,7 +370,8 @@ namespace Minesweeper
 
         private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            //SliderNumText.Text = DiffSlider.Value.ToString();
+            int num = (int)DiffSlider.Value;
+            SliderNumText.Text = num.ToString();
         }
     }
 }
