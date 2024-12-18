@@ -188,13 +188,7 @@ namespace Minesweeper
                             Child = flagImage
                         };
 
-                        if (_lastMine.Row == row && _lastMine.Col == col)
-                        {
-                            Grid.SetRow(mineViewbox, row);
-                            Grid.SetColumn(mineViewbox, col);
-                            gameField.Children.Add(mineViewbox);
-                            continue;
-                        }
+                        
                         if (_modifyButtons[row, col].IsMine && !_modifyButtons[row,col].IsFlagged && !(_lastMine.Row == row && _lastMine.Col == col))
                         {
                             Grid.SetRow(usMineViewbox, row);
@@ -210,6 +204,13 @@ namespace Minesweeper
                             continue;
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
+                        if (_lastMine.Row == row && _lastMine.Col == col)
+                        {
+                            Grid.SetRow(mineViewbox, row);
+                            Grid.SetColumn(mineViewbox, col);
+                            gameField.Children.Add(mineViewbox);
+                            continue;
+                        }
                     }
                     else
                     {
