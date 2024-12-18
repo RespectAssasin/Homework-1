@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minesweeper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1028" Width="900">
+        Title="MainWindow" Height="1028" Width="900"
+        MinHeight="1028" MaxHeight="1028"
+        MinWidth="900" MaxWidth="900"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid x:Name="GamePanel" Margin="25,158,25,26" Visibility="Collapsed"/>
 

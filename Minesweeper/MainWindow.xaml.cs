@@ -297,7 +297,6 @@ namespace Minesweeper
             {
                 _lastMine.Row = click.row;
                 _lastMine.Col = click.col;
-                MessageBox.Show($"{_lastMine.Row}, {_lastMine.Col}");
                 EndGame();
                 MessageBox.Show("Вы взорвались!!!\nПозор");
             }

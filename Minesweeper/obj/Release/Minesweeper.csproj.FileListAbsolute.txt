@@ -1,0 +1,15 @@
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Release\Minesweeper.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Release\Minesweeper.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\bin\Release\Minesweeper.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.csproj.CoreCompileInputs.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.pdb
