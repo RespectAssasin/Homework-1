@@ -1,0 +1,72 @@
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+C:\Users\teacher\Desktop\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+C:\Users\student\Documents\Projects\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+C:\Users\ПК\source\repos\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+C:\Users\ПК\Documents\GitHub\Homeworks\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainResourses.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache

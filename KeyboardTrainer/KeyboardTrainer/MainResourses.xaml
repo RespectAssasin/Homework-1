@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+    
+    <Style x:Key="RedBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FFF07795"/>
+    </Style>
+
+    <Style x:Key="YellowBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FFE6F077"/>
+    </Style>
+    
+    <Style x:Key="GreenBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FF7FF077"/>
+    </Style>
+    
+    <Style x:Key="BlueBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FF77BEF0"/>
+    </Style>
+    
+    <Style x:Key="PurpleBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FFDB77F0"/>
+    </Style>
+    
+    <Style x:Key="GrayBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FFB5B5B5"/>
+    </Style>
+
+    <Style x:Key="MenuTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Consolas"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Background" Value="LightGreen"/>
+        <Setter Property="Text" Value=""/>
+    </Style>
+
+    <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Background" Value="LightBlue"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style x:Key="MinMenuTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Consolas"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="OrangeBorderStyle" TargetType="Border" BasedOn="{StaticResource BorderStyle}">
+        <Setter Property="Background" Value="#FFE5BB72"/>
+    </Style>
+
+    <Style x:Key="BorderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+</ResourceDictionary>
