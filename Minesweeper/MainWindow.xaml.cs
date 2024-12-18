@@ -31,6 +31,7 @@ namespace Minesweeper
         private float _minesPercent = 0.15f;
 
         private ModifyButton[,] _modifyButtons;
+        private ModifyButton _lastMine = new ModifyButton();
         private UserClick click = new UserClick();
 
         Random rand = new Random();
@@ -75,7 +76,7 @@ namespace Minesweeper
                     Timer.Text = $"{elapsedTime.Seconds}:{elapsedTime.Milliseconds:D3}";
                 });
             }
-            Timer.Text = "0:000";
+            
         }
 
 
@@ -91,6 +92,8 @@ namespace Minesweeper
         {
             EndGameStatus = false;
             GamePanel.Visibility = Visibility.Visible;
+            SliderNumText.Visibility = Visibility.Collapsed;
+            DiffSlider.Visibility = Visibility.Collapsed;
 
             click.IsFirstClick = true;
             _modifyButtons = new ModifyButton[_gameFieldHight, _gameFieldWidth];
@@ -144,27 +147,66 @@ namespace Minesweeper
                     }
                     if (EndGameStatus)
                     {
-
                         _modifyButtons[row, col].IsEnabled = false;
-                        if (_modifyButtons[row, col].IsMine)
+
+
+                        Image usMineImage = new Image
                         {
-                            Image flagImage = new Image
-                            {
-                                Source = new BitmapImage(new Uri("pack://application:,,,/Images/Mine.png")),
-                                Stretch = Stretch.Uniform,
-                                VerticalAlignment = VerticalAlignment.Stretch,
-                                HorizontalAlignment = HorizontalAlignment.Stretch
-                            };
+                            Source = new BitmapImage(new Uri("pack://application:,,,/Images/UsMine.png")),
+                            Stretch = Stretch.Uniform,
+                            VerticalAlignment = VerticalAlignment.Stretch,
+                            HorizontalAlignment = HorizontalAlignment.Stretch
+                        };
+                        Viewbox usMineViewbox = new Viewbox
+                        {
+                            Stretch = Stretch.Uniform,
+                            Child = usMineImage
+                        };
+                        Image mineImage = new Image
+                        {
+                            Source = new BitmapImage(new Uri("pack://application:,,,/Images/Mine.png")),
+                            Stretch = Stretch.Uniform,
+                            VerticalAlignment = VerticalAlignment.Stretch,
+                            HorizontalAlignment = HorizontalAlignment.Stretch
+                        };
+                        Viewbox mineViewbox = new Viewbox
+                        {
+                            Stretch = Stretch.Uniform,
+                            Child = mineImage
+                        };
 
-                            Viewbox viewbox = new Viewbox
-                            {
-                                Stretch = Stretch.Uniform,
-                                Child = flagImage
-                            };
+                        Image flagImage = new Image
+                        {
+                            Source = new BitmapImage(new Uri("pack://application:,,,/Images/Flag.png")),
+                            Stretch = Stretch.Uniform,
+                            VerticalAlignment = VerticalAlignment.Stretch,
+                            HorizontalAlignment = HorizontalAlignment.Stretch
+                        };
+                        Viewbox flagViewbox = new Viewbox
+                        {
+                            Stretch = Stretch.Uniform,
+                            Child = flagImage
+                        };
 
-                            Grid.SetRow(viewbox, row);
-                            Grid.SetColumn(viewbox, col);
-                            gameField.Children.Add(viewbox);
+                        if (_lastMine.Row == row && _lastMine.Col == col)
+                        {
+                            Grid.SetRow(mineViewbox, row);
+                            Grid.SetColumn(mineViewbox, col);
+                            gameField.Children.Add(mineViewbox);
+                            continue;
+                        }
+                        if (_modifyButtons[row, col].IsMine && !_modifyButtons[row,col].IsFlagged && !(_lastMine.Row == row && _lastMine.Col == col))
+                        {
+                            Grid.SetRow(usMineViewbox, row);
+                            Grid.SetColumn(usMineViewbox, col);
+                            gameField.Children.Add(usMineViewbox);
+                            continue;
+                        }
+                        if (_modifyButtons[row,col].IsMine && _modifyButtons[row, col].IsFlagged)
+                        {
+                            Grid.SetRow(flagViewbox, row);
+                            Grid.SetColumn(flagViewbox, col);
+                            gameField.Children.Add(flagViewbox);
                             continue;
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
@@ -185,17 +227,6 @@ namespace Minesweeper
         {
             int _minesNumber = (int)((float)(_gameFieldHight * _gameFieldWidth) * _minesPercent);
             int countMines = 0;
-
-            /*for (int row = 0; row < _gameFieldHight; row++)
-            {
-                for (int col = 0; col < _gameFieldWidth; col++)
-                {
-                    _modifyButtons[row, col].IsMine = false;
-                    _modifyButtons[row, col].IsNumber = false;
-                    _modifyButtons[row, col].IsNone = true;
-                    _modifyButtons[row, col].IsActive = false;
-                }
-            }*/
 
             foreach (var butt in _modifyButtons)
             {
@@ -225,18 +256,6 @@ namespace Minesweeper
                 }
             }
 
-            /*for (int row = 0; row < _gameFieldHight; row++)
-            {
-                for (int col = 0; col < _gameFieldWidth; col++)
-                {
-                    if (CountNearMines(row, col) > 0)
-                    {
-                        _modifyButtons[row, col].IsNumber = true;
-                        _modifyButtons[row, col].IsNone = false;
-                        _modifyButtons[row, col].NearMines = CountNearMines(row, col);
-                    }
-                }
-            }*/
             foreach (var butt in _modifyButtons)
             {
                 if (CountNearMines(butt.Row, butt.Col) > 0)
@@ -254,6 +273,8 @@ namespace Minesweeper
             EndGameStatus = true;
             DrawField();
             StartButton.Visibility = Visibility.Visible;
+            SliderNumText.Visibility = Visibility.Visible;
+            DiffSlider.Visibility = Visibility.Visible;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -274,8 +295,11 @@ namespace Minesweeper
 
             if (_modifyButtons[click.row, click.col].IsMine)
             {
+                _lastMine.Row = click.row;
+                _lastMine.Col = click.col;
+                MessageBox.Show($"{_lastMine.Row}, {_lastMine.Col}");
                 EndGame();
-                MessageBox.Show("Поздравляем, вы взорвались!");
+                MessageBox.Show("Вы взорвались!!!\nПозор");
             }
         }
 
@@ -362,7 +386,6 @@ namespace Minesweeper
             {
                 button.Content = null;
             }
-            ///////////////////////////////////////////////////////////////
             if (CheckWinCondition() && !click.IsFirstClick)
             {
                 EndGame();
@@ -372,12 +395,11 @@ namespace Minesweeper
 
         private void ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (!_isInitialized) return; // Игнорировать вызов до полной инициализации
+            if (!_isInitialized) return;
 
-            if (SliderNumText != null && DiffSlider != null)
-            {
-                SliderNumText.Content = DiffSlider.Value.ToString();
-            }
+            SliderNumText.Content = DiffSlider.Value.ToString();
+            _gameFieldHight = (int)DiffSlider.Value;
+            _gameFieldWidth = (int)DiffSlider.Value;
         }
     }
 }
