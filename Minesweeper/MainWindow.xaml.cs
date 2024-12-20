@@ -400,7 +400,6 @@ namespace Minesweeper
         {
             if (!_isInitialized) return;
 
-            SliderNumText.Content = DiffSlider.Value.ToString();
             _gameFieldHight = (int)DiffSlider.Value;
             _gameFieldWidth = (int)DiffSlider.Value;
         }
