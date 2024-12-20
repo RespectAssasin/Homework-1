@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minesweeper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1028" Width="900"
+        Title="Сапёр" Height="1028" Width="900"
         MinHeight="1028" MaxHeight="1028"
         MinWidth="900" MaxWidth="900"
         WindowStartupLocation="CenterScreen">

@@ -13,3 +13,18 @@ I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максим
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.csproj.CoreCompileInputs.cache
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.exe
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\Minesweeper\obj\Release\Minesweeper.pdb
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\bin\Release\Minesweeper.exe.config
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\bin\Release\Minesweeper.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\bin\Release\Minesweeper.pdb
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.csproj.AssemblyReference.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\MainWindow.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\App.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper_MarkupCompile.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper_MarkupCompile.lref
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\MainWindow.baml
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.g.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.Properties.Resources.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.csproj.GenerateResource.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\Minesweeper\obj\Release\Minesweeper.pdb

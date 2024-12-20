@@ -23,16 +23,18 @@ namespace Minesweeper
         private bool _isInitialized = false;
         private bool _isTimerRunning;
         private int _elapsedSeconds;
-        int _elapsedMilliseconds;
+        //int _elapsedMilliseconds;
 
-        private bool EndGameStatus = false;
+        private bool EndGameStatus;
         private int _gameFieldHight = 5;
         private int _gameFieldWidth = 5;
         private float _minesPercent = 0.15f;
 
         private ModifyButton[,] _modifyButtons;
-        private ModifyButton _lastMine = new ModifyButton();
         private UserClick click = new UserClick();
+        
+        private ModifyButton _lastMine = new ModifyButton();
+        private bool _IsLastMineChanged;
 
         Random rand = new Random();
 
@@ -46,7 +48,6 @@ namespace Minesweeper
         {
             if (_isTimerRunning)
             {
-                //MessageBox.Show("Секундомер уже запущен!");
                 return;
             }
 
@@ -59,7 +60,6 @@ namespace Minesweeper
             await Task.WhenAll(timerTask, mainGameTask);
 
             _isTimerRunning = false;
-            //MessageBox.Show("Игра завершена!");
         }
 
         private async Task RunTimer()
@@ -79,7 +79,6 @@ namespace Minesweeper
             
         }
 
-
         private async Task RunGameProgram()
         {
             await Task.Run(() =>
@@ -91,11 +90,13 @@ namespace Minesweeper
         private void Start()
         {
             EndGameStatus = false;
+            _IsLastMineChanged = false;
+            click.IsFirstClick = true;
+
             GamePanel.Visibility = Visibility.Visible;
             SliderNumText.Visibility = Visibility.Collapsed;
             DiffSlider.Visibility = Visibility.Collapsed;
 
-            click.IsFirstClick = true;
             _modifyButtons = new ModifyButton[_gameFieldHight, _gameFieldWidth];
 
             for (int row = 0; row < _gameFieldHight; row++)
@@ -174,7 +175,6 @@ namespace Minesweeper
                             Stretch = Stretch.Uniform,
                             Child = mineImage
                         };
-
                         Image flagImage = new Image
                         {
                             Source = new BitmapImage(new Uri("pack://application:,,,/Images/Flag.png")),
@@ -204,7 +204,7 @@ namespace Minesweeper
                             continue;
                         }
                         if (_modifyButtons[row, col].IsNumber) _modifyButtons[row, col].Content = _modifyButtons[row, col].NearMines;
-                        if (_lastMine.Row == row && _lastMine.Col == col)
+                        if (_IsLastMineChanged && (_lastMine.Row == row && _lastMine.Col == col))
                         {
                             Grid.SetRow(mineViewbox, row);
                             Grid.SetColumn(mineViewbox, col);
@@ -283,6 +283,8 @@ namespace Minesweeper
             click.row = ((ModifyButton)sender).Row;
             click.col = ((ModifyButton)sender).Col;
 
+            if (_modifyButtons[click.row, click.col].IsFlagged) return;
+
             if (click.IsFirstClick)
             {
                 GenerateField();
@@ -298,6 +300,7 @@ namespace Minesweeper
             {
                 _lastMine.Row = click.row;
                 _lastMine.Col = click.col;
+                _IsLastMineChanged = true;
                 EndGame();
                 MessageBox.Show("Вы взорвались!!!\nПозор");
             }
