@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\",
+  "WorkspaceRootPath": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\\u043F\u043A\\documents\\github\\homeworks\\keyboardtrainer\\keyboardtrainer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\makar\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\homework\\keyboardtrainer\\keyboardtrainer\\mainresourses.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainresourses.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\makar\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\homework\\keyboardtrainer\\keyboardtrainer\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\makar\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\homework\\keyboardtrainer\\keyboardtrainer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\keyboardtrainer\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\makar\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\homework\\keyboardtrainer\\keyboardtrainer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|c:\\users\\\u043F\u043A\\documents\\github\\homeworks\\keyboardtrainer\\keyboardtrainer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\keyboardtrainer\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B2EB1181-2966-498A-997F-059B3E0BA9AE}|KeyboardTrainer\\KeyboardTrainer.csproj|solutionrelative:keyboardtrainer\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +30,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 136,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
               "RelativeDocumentMoniker": "KeyboardTrainer\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
               "RelativeToolTip": "KeyboardTrainer\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-04T10:57:54.391Z",
@@ -40,30 +64,53 @@
         },
         {
           "DockedWidth": 264,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "KeyboardTrainer\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
-              "RelativeToolTip": "KeyboardTrainer\\MainWindow.xaml",
-              "ViewState": "AgIAAMMBAAAAAAAAAAAuwNYBAAAZAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MainResourses.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainResourses.xaml",
+              "RelativeDocumentMoniker": "KeyboardTrainer\\MainResourses.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainResourses.xaml",
+              "RelativeToolTip": "KeyboardTrainer\\MainResourses.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T10:57:54.528Z",
+              "WhenOpened": "2024-12-21T11:49:18.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\App.xaml",
+              "RelativeDocumentMoniker": "KeyboardTrainer\\App.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\App.xaml",
+              "RelativeToolTip": "KeyboardTrainer\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-21T11:49:12.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "KeyboardTrainer\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml",
+              "RelativeToolTip": "KeyboardTrainer\\MainWindow.xaml",
+              "ViewState": "AgIAAMMBAAAAAAAAAAAuwNYBAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-04T10:57:54.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "KeyboardTrainer\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\\u041F\u041A\\Documents\\GitHub\\Homeworks\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\KeyboardTrainer\\KeyboardTrainer\\MainWindow.xaml.cs",
               "RelativeToolTip": "KeyboardTrainer\\MainWindow.xaml.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAAAuwDkBAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAuwCkBAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T10:57:54.605Z",
               "EditorCaption": ""

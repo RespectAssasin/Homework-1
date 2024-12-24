@@ -70,3 +70,19 @@ I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максим
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
 I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe.config
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\bin\Debug\KeyboardTrainer.pdb
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.AssemblyReference.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainResourses.baml
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.baml
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.baml
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\MainWindow.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\App.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer_MarkupCompile.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.g.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.Properties.Resources.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.GenerateResource.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.csproj.CoreCompileInputs.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\KeyboardTrainer\KeyboardTrainer\obj\Debug\KeyboardTrainer.pdb
