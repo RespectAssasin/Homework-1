@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Exam"
+    "\\WeatherMenu"
   ],
+  "SelectedNode": "\\WeatherMenu\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

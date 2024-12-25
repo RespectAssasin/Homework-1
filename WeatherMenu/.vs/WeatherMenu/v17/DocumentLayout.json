@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\makar\\source\\repos\\WeatherMenu\\",
+  "WorkspaceRootPath": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|c:\\users\\makar\\source\\repos\\weathermenu\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|c:\\users\\makar\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\homework\\weathermenu\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|c:\\users\\makar\\source\\repos\\weathermenu\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7AE5758-A318-48A3-89DD-BD07F9B738A6}|WeatherMenu.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\makar\\source\\repos\\WeatherMenu\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\makar\\source\\repos\\WeatherMenu\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-25T15:12:31.311Z",
@@ -52,14 +52,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\makar\\source\\repos\\WeatherMenu\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\makar\\source\\repos\\WeatherMenu\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\WeatherMenu\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T15:12:30.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T15:12:30.716Z"
             }
           ]
         }
