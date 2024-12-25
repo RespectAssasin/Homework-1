@@ -77,36 +77,72 @@
                 <Button Content="Close"/>
             </StackPanel>
 
-            <ListView x:Name="DetailsButton"
-                    Grid.Column="1"
-                    Margin="10,10,10,10" >
-            </ListView>
+            <Grid Name="DetailsButton" Grid.Column="1" Margin="10">
 
-            <Border Grid.Column="2"
-                    Background="LightGray"
-                    Margin="10,10,10,10" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="15" Text="{Binding WeekDay}" Width="auto"/>
+                <TextBlock Grid.Row="1" FontSize="20" Text="{Binding Location}" Width="auto" Margin="0,0,0,0"/>
+                <TextBlock Grid.Row="2" FontSize="30" Text="{Binding MaxTemp}" Width="auto" Height="40" Margin="10,0,0,0" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="2" FontSize="15" Text="Night" Width="auto" Height="25" Margin="60,-20,0,0"/>
+                <TextBlock Grid.Row="2" FontSize="15" Text="{Binding MinTemp}" Width="auto" Height="25" Margin="60,20,0,0"/>
+                <TextBlock Grid.Row="3" FontSize="15" Text="Fog" Width="auto" Height="25" Margin="0,0,0,0"/>
+
+            </Grid>
+            <Border Grid.Column="2" Grid.ColumnSpan="2" CornerRadius="5" BorderThickness="10" Background="MediumAquamarine" BorderBrush="MediumAquamarine">
+                
+            <ListView Grid.Column="2"
+                    Background="Transparent"
+                    Grid.ColumnSpan="2"
+                    BorderBrush="Transparent"
+                      >
                 <TextBlock Text="Table"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="16"
                            FontWeight="Bold"/>
+            </ListView>
             </Border>
         </Grid>
 
-        <StackPanel x:Name="DaysOfWeek"
-                    Grid.Row="3"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Margin="10,10" >
-            <Button Content="Monday" Margin="5"/>
-            <Button Content="Tuesday" Margin="5"/>
-            <Button Content="Wednesday" Margin="5"/>
-            <Button Content="Thursday" Margin="5"/>
-            <Button Content="Friday" Margin="5"/>
-            <Button Content="Saturday" Margin="5"/>
-            <Button Content="Sunday" Margin="5"/>
-        </StackPanel>
+        <ListBox x:Name="DaysOfWeek1"
+         Grid.Row="3"
+         HorizontalAlignment="Center"
+         VerticalAlignment="Center"
+         Margin="10,10"
+         ItemsSource="{Binding Days}"
+         SelectionChanged="DaysOfWeek1_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Binding Date,StringFormat={}{0:M}}" FontSize="10"/>
+                        <TextBlock Text="{Binding WeekDay}" FontWeight="Bold" FontSize="15"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding MaxTemp}" FontSize="20"/>
+                            <TextBlock Grid.Column="1" Text="{Binding MinTemp}" FontSize="12" Foreground="#b5b5b5" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <TextBlock Text="{Binding Wheather}" FontSize="12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Window>

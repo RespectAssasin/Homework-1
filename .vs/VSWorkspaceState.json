@@ -3,6 +3,6 @@
     "",
     "\\WeatherMenu"
   ],
-  "SelectedNode": "\\WeatherMenu\\MainWindow.xaml",
+  "SelectedNode": "\\WeatherMenu\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

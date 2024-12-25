@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,25 +21,7 @@ namespace WeatherMenu
     /// </summary>
     public partial class MainWindow : Window
     {
-        public enum WindDirection
-        {
-            West = 1,
-            East = 2,
-            Nord = 3,
-            Sud = 4
-        }
-
-        public enum WeatherCodes
-        {
-            ClearSky = 0,
-            Windy = 1,
-            Overcast = 2,
-            Fog = 3,
-            SlightRain = 4,
-            HeavyRain = 5,
-            Snowfall = 6,
-            Thunderstorm = 7
-        }
+        
         public enum DaysOfWeek
         {
             Monday = 1, 
@@ -49,24 +32,146 @@ namespace WeatherMenu
             Saturday = 6,
             Sunday = 7
         }
-        private Day[] Days = new Day[7];
-        public MainWindow()
-        {
-            InitializeComponent();
-            for (int i = 1; i == 7; i++)
-            {
-                DaysOfWeek day = (DaysOfWeek)i;
-                Days[i].WeekDay = day.ToString();
-                Days[i].
-            }
-
-            Start();
-        }
+        //private Day[] Days = new Day[7];
 
         private void Start()
         {
             
         }
+        private ObservableCollection<Day> _days;
 
+        public ObservableCollection<Day> Days
+        {
+            get { return _days; }
+            set { _days = value; }
+        }
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            Days = new ObservableCollection<Day>
+            {
+                new Day
+                {
+                    WeekDay = "Monday",
+                    Date = DateTime.Now,
+                    MaxTemp = 25,
+                    MinTemp = 15,
+                    Location = "City A",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1015,
+                    WindSpeed = 5.5,
+                    WindDirection = "North",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 20 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Tuesday",
+                    Date = DateTime.Now.AddDays(1),
+                    MaxTemp = 23,
+                    MinTemp = 14,
+                    Location = "City B",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1012,
+                    WindSpeed = 4.5,
+                    WindDirection = "East",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 19 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Wensday",
+                    Date = DateTime.Now.AddDays(1),
+                    MaxTemp = 23,
+                    MinTemp = 14,
+                    Location = "City C",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1012,
+                    WindSpeed = 4.5,
+                    WindDirection = "East",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 19 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Thursday",
+                    Date = DateTime.Now,
+                    MaxTemp = 25,
+                    MinTemp = 15,
+                    Location = "City D",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1015,
+                    WindSpeed = 5.5,
+                    WindDirection = "North",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 20 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Friday",
+                    Date = DateTime.Now.AddDays(1),
+                    MaxTemp = 23,
+                    MinTemp = 14,
+                    Location = "City E",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1012,
+                    WindSpeed = 4.5,
+                    WindDirection = "East",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 19 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Saturday",
+                    Date = DateTime.Now,
+                    MaxTemp = 25,
+                    MinTemp = 15,
+                    Location = "City F",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1015,
+                    WindSpeed = 5.5,
+                    WindDirection = "North",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 20 }
+                    }
+                },
+                new Day
+                {
+                    WeekDay = "Sunday",
+                    Date = DateTime.Now,
+                    MaxTemp = 25,
+                    MinTemp = 15,
+                    Location = "City G",
+                    Wheather = WeatherCodes.Thunderstorm,
+                    Pressure = 1015,
+                    WindSpeed = 5.5,
+                    WindDirection = "North",
+                    DayInfo = new List<DayByHour>
+                    {
+                        new DayByHour { Time = DateTime.Now.AddHours(1), Temperature = 20 }
+                    }
+                }
+            };
+
+            DataContext = this;
+        }
+
+        private void DaysOfWeek1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DetailsButton.DataContext = DaysOfWeek1.SelectedItem;
+        }
     }
 }

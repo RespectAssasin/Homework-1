@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WeatherMenu.MainWindow;
 
 namespace WeatherMenu
 {
@@ -14,7 +15,7 @@ namespace WeatherMenu
         public int MinTemp { get; set; }
 
         public string Location { get; set; }
-        public string Wheather { get; set; }
+        public WeatherCodes Wheather { get; set; }
         public double Pressure { get; set; }
         public double WindSpeed {  get; set; }
         public string WindDirection { get; set; }
