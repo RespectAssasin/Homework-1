@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherMenu"
         mc:Ignorable="d"
-        Title="YandexWeather" Height="450" Width="800">
+        Title="YandexWeather" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,14 +14,16 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <StackPanel>
+            
         <Grid Grid.Row="0" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            
-            <Button Content="Synoptic diagnose"
+
+            <TextBlock Text="Synoptic diagnose"
                     Grid.Column="0" 
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
@@ -34,54 +36,55 @@
                        FontSize="16"
                        FontWeight="Bold"/>
 
-            <Button Content="Personal Desk"
+            <TextBlock Text="Personal Desk"
                     Grid.Column="2"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Margin="5,0"/>
+            
         </Grid>
-
-        <TextBlock Grid.Row="1"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+        <TextBlock Grid.Column="1"
                    Text="Weather Info for current period"
-                   Margin="10,5"
-                   HorizontalAlignment="Left"
+                   HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="14"
                    FontWeight="Bold"/>
+        </Grid>
+        </StackPanel>
+        
 
         <Grid Grid.Row="2" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0"
                         Orientation="Vertical"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Margin="0,0,10,0">
+                        VerticalAlignment="Top">
                 <Button Content="Home" Margin="0,0,0,5"/>
                 <Button Content="Location" Margin="0,0,0,5"/>
                 <Button Content="Settings" Margin="0,0,0,5"/>
                 <Button Content="Close"/>
             </StackPanel>
 
-            <Button x:Name="DetailsButton"
+            <ListView x:Name="DetailsButton"
                     Grid.Column="1"
-                    Content="Details"
-                    Margin="10"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Width="200"
-                    Height="100">
-            </Button>
+                    Margin="10,10,10,10" >
+            </ListView>
 
             <Border Grid.Column="2"
                     Background="LightGray"
-                    Margin="10"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
+                    Margin="10,10,10,10" Grid.ColumnSpan="2">
                 <TextBlock Text="Table"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -90,11 +93,12 @@
             </Border>
         </Grid>
 
-        <StackPanel Grid.Row="3"
+        <StackPanel x:Name="DaysOfWeek"
+                    Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Margin="10,10">
+                    Margin="10,10" >
             <Button Content="Monday" Margin="5"/>
             <Button Content="Tuesday" Margin="5"/>
             <Button Content="Wednesday" Margin="5"/>

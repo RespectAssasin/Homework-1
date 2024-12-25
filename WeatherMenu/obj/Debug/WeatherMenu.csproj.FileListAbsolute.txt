@@ -1,0 +1,15 @@
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\bin\Debug\WeatherMenu.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\bin\Debug\WeatherMenu.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\bin\Debug\WeatherMenu.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.csproj.CoreCompileInputs.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\WeatherMenu\obj\Debug\WeatherMenu.pdb
