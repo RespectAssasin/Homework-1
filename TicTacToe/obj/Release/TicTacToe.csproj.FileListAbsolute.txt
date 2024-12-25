@@ -13,3 +13,18 @@ C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release
 C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.csproj.CoreCompileInputs.cache
 C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.exe
 C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\bin\Release\TicTacToe.exe.config
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\bin\Release\TicTacToe.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\bin\Release\TicTacToe.pdb
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.csproj.AssemblyReference.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\MainWindow.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\App.g.cs
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe_MarkupCompile.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe_MarkupCompile.lref
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\MainWindow.baml
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.g.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.Properties.Resources.resources
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.csproj.GenerateResource.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.csproj.CoreCompileInputs.cache
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.exe
+I:\СТУДЕНТЫ\П22\Топ сикрет от Сергеев и Максима\Сергей Github\TicTacToe\obj\Release\TicTacToe.pdb
