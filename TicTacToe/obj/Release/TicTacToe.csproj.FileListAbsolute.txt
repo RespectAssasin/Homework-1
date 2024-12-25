@@ -1,0 +1,15 @@
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\bin\Release\TicTacToe.exe.config
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\bin\Release\TicTacToe.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\bin\Release\TicTacToe.pdb
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.csproj.AssemblyReference.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\MainWindow.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\App.g.cs
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe_MarkupCompile.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe_MarkupCompile.lref
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\MainWindow.baml
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.g.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.Properties.Resources.resources
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.csproj.GenerateResource.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.csproj.CoreCompileInputs.cache
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.exe
+C:\Users\makar\OneDrive\Документы\GitHub\Homework\TicTacToe\obj\Release\TicTacToe.pdb

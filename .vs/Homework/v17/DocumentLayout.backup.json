@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\",
+  "WorkspaceRootPath": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TicTacToe\\TicTacToeLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TicTacToe\\MainWindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TicTacToe\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,19 +22,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TicTacToeLogic.cs",
-              "DocumentMoniker": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs",
               "RelativeDocumentMoniker": "TicTacToe\\TicTacToeLogic.cs",
-              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\TicTacToeLogic.cs",
               "RelativeToolTip": "TicTacToe\\TicTacToeLogic.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -45,9 +57,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "TicTacToe\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml.cs",
               "RelativeToolTip": "TicTacToe\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -57,14 +69,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml",
               "RelativeDocumentMoniker": "TicTacToe\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\SystemX\\Documents\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\makar\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\Homework\\TicTacToe\\MainWindow.xaml",
               "RelativeToolTip": "TicTacToe\\MainWindow.xaml",
               "ViewState": "AgIAAEAAAAAAAAAAAAAAAHAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-24T10:02:56.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-24T10:02:56.205Z"
             }
           ]
         }
