@@ -81,7 +81,7 @@ namespace TicTacToe
             string imageFile = symbol == "X" ? "X.png" : "O.png";
             Image img = new Image();
             Uri uri = new Uri("pack://application:,,,/" + imageFile, UriKind.Absolute);
-            BitmapImage bmp = new BitmapImage(uri);
+            BitmapImage bmp = new BitmapImage(uri);// штука для автоматической подгонки размеров изображения(если что,нашёл в интернете)
             img.Source = bmp;
             img.Stretch = System.Windows.Media.Stretch.Uniform;
             img.VerticalAlignment = System.Windows.VerticalAlignment.Center;
