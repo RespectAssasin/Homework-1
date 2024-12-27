@@ -47,8 +47,12 @@ namespace Work_25._11
          private async void StartTest_Click(object sender, RoutedEventArgs e)
         {
             StartTestPanel.Visibility = Visibility.Collapsed;
+            //TimerBox.Text = string.Empty;
             ReactionTestPanel.Visibility = Visibility.Visible;
+
+            StopButton.IsEnabled = false;
             await Task.Delay(_random.Next(3000, 7000));
+            StopButton.IsEnabled = true;
 
             _startTime = DateTime.Now;
             _isRunning = true;
@@ -57,28 +61,28 @@ namespace Work_25._11
             {
                 await Task.Delay(1);
                 diff = DateTime.Now - _startTime;
-                TimerBox.Text = diff.ToString(@"hh\:mm\:ss\.fff");
+                TimerBox.Text = diff.ToString(@"mm\:ss\.fff");
             }
 
-            MessageBox.Show($"Ваше время: {diff.ToString(@"hh\:mm\:ss\.fff")}", "Результат");
+            MessageBox.Show($"Ваше время: {diff.ToString(@"mm\:ss\.fff")}", "Результат");
 
-            StartTestPanel.Visibility= Visibility.Collapsed;
+            //StartTestPanel.Visibility= Visibility.Collapsed;
 
-            Player player = new Player(UserName, diff.ToString());
+            Player player = new Player(UserName, diff);
             LeaderBoard.Add(player);
 
             UpdateLeaderboardDisplay();
 
             //
 
-            LeaderboardPanel.Visibility= Visibility.Visible;
-            TimerBox.Text= string.Empty;
+            //LeaderboardPanel.Visibility= Visibility.Visible;
+            
         }
         
         private void StopTest_Click(object sender, RoutedEventArgs e)
         {
             _isRunning = false;
-            StopButton.Visibility = Visibility.Collapsed;
+            StopButton.IsEnabled = false;
         }
 
         private void UpdateLeaderboardDisplay()
@@ -96,6 +100,34 @@ namespace Work_25._11
             if (sortedPlayers.Count > 2) Player3Text.Text = $"3. {sortedPlayers[2].Username}: {sortedPlayers[2].Time}";
             if (sortedPlayers.Count > 3) Player4Text.Text = $"4. {sortedPlayers[3].Username}: {sortedPlayers[3].Time}";
             if (sortedPlayers.Count > 4) Player5Text.Text = $"5. {sortedPlayers[4].Username}: {sortedPlayers[4].Time}";
+        }
+
+        private void PlayerMenuButt(object sender, RoutedEventArgs e)
+        {
+            UserInputPanel.Visibility = Visibility.Visible;
+
+            StartTestPanel.Visibility = Visibility.Collapsed;
+            ReactionTestPanel.Visibility = Visibility.Collapsed;
+            LeaderboardPanel.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void TestMenuButt(object sender, RoutedEventArgs e)
+        {
+            StartTestPanel.Visibility = Visibility.Visible;
+
+            UserInputPanel.Visibility = Visibility.Collapsed;
+            ReactionTestPanel.Visibility = Visibility.Collapsed;
+            LeaderboardPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void LeaderBoardMenuButt(object sender, RoutedEventArgs e)
+        {
+            LeaderboardPanel.Visibility = Visibility.Visible;
+
+            UserInputPanel.Visibility = Visibility.Collapsed;
+            StartTestPanel.Visibility = Visibility.Collapsed;
+            ReactionTestPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

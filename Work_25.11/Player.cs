@@ -8,12 +8,12 @@ namespace Work_25._11
 {
     internal class Player
     {
-        public Player(string username, string time) 
+        public string Username;
+        public TimeSpan Time;
+        public Player(string username, TimeSpan time) 
         {
             Username = username;
             Time = time;
         }
-        public string Username;
-        public string Time;
     }
 }
