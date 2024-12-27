@@ -4,47 +4,49 @@ namespace TicTacToe
 {
     public class TicTacToeLogic
     {
-        private string[] _board;
+        private string[] _field;
         private string _currentPlayer;
-        private bool _gameOver;
+        private bool _gameEnd;
         private string _winner;
+        private Random random;
+        private int _nextAIMove;
 
-        public string[] Board { get { return _board; } }
+        public string[] Field { get { return _field; } }
         public string CurrentPlayer { get { return _currentPlayer; } }
-        public bool GameOver { get { return _gameOver; } }
+        public bool GameOver { get { return _gameEnd; } }
         public string Winner { get { return _winner; } }
 
-        private Random _rnd;
         public TicTacToeLogic()
         {
-            this._board = new string[9];
+            _field = new string[9];
             for (int i = 0; i < 9; i++)
             {
-                this._board[i] = "";
+                _field[i] = "";
             }
-            this._currentPlayer = "X";
-            this._gameOver = false;
-            this._winner = "";
-            this._rnd = new Random();
+            _currentPlayer = "X";
+            _gameEnd = false;
+            _winner = "";
+            random = new Random();
+            _nextAIMove = 0;
         }
 
         public void MakeMove(int x, int y)
         {
             int index = x * 3 + y;
-            if (!this._gameOver && index >= 0 && index < 9 && this._board[index] == "")
+            if (!_gameEnd && index >= 0 && index < 9 && _field[index] == "")
             {
-                this._board[index] = this._currentPlayer;
+                _field[index] = _currentPlayer;
                 CheckWinCondition();
-                if (!this._gameOver)
+                if (!_gameEnd)
                 {
-                    this._currentPlayer = this._currentPlayer == "X" ? "O" : "X";
+                    _currentPlayer = (_currentPlayer == "X") ? "O" : "X";
                 }
             }
         }
 
         public void MakeAiMove(int difficulty, string aiSymbol)
         {
-            if (_gameOver) return;
+            if (_gameEnd) return;
             if (_currentPlayer != aiSymbol) return;
             if (difficulty == 1)
             {
@@ -52,118 +54,173 @@ namespace TicTacToe
             }
             else if (difficulty == 2)
             {
-                AiRandom();
+                _nextAIMove++;
+                if (_nextAIMove % 2 == 0)
+                {
+                    AiRandom();
+                }
+                else
+                {
+                    AiMinimaxMove(aiSymbol);
+                }
             }
             else
             {
-                AiBestMove(aiSymbol);
+                AiMinimaxMove(aiSymbol);
             }
         }
-
 
         private void AiRandom()
         {
             while (true)
             {
-                int index = this._rnd.Next(0, 9);
-                if (this._board[index] == "")
+                int index = random.Next(0, 9);
+                if (_field[index] == "")
                 {
-                    this._board[index] = this._currentPlayer;
+                    _field[index] = _currentPlayer;
                     CheckWinCondition();
-                    if (!this._gameOver)
+                    if (!_gameEnd)
                     {
-                        this._currentPlayer = this._currentPlayer == "X" ? "O" : "X";
+                        _currentPlayer = (_currentPlayer == "X") ? "O" : "X";
                     }
                     break;
                 }
             }
         }
-        private void AiBestMove(string aiSymbol)
+
+        private void AiMinimaxMove(string aiSymbol)
         {
-            bool done = TryToWinOrBlock(aiSymbol);
-            if (!done)
+            int bestMoveIndex = GetBestMoveIndex(aiSymbol);
+            if (bestMoveIndex >= 0 && bestMoveIndex < 9 && _field[bestMoveIndex] == "")
             {
-                bool blocked = TryToWinOrBlock(aiSymbol == "X" ? "O" : "X");
-                if (!blocked)
+                _field[bestMoveIndex] = _currentPlayer;
+                CheckWinCondition();
+                if (!_gameEnd)
                 {
-                    AiRandom();
+                    _currentPlayer = (_currentPlayer == "X") ? "O" : "X";
                 }
             }
+            else
+            {
+                AiRandom();
+            }
         }
-        private bool TryToWinOrBlock(string symbol)
+
+        private int GetBestMoveIndex(string aiSymbol)
+        {
+            int bestScore = int.MinValue;
+            int bestMove = -1;
+            for (int i = 0; i < 9; i++)
+            {
+                if (_field[i] == "")
+                {
+                    _field[i] = aiSymbol;
+                    int score = Minimax(0, false, aiSymbol);
+                    _field[i] = "";
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestMove = i;
+                    }
+                }
+            }
+            return bestMove;
+        }
+
+        private int Minimax(int depth, bool isMaximizing, string aiSymbol)
+        {
+            string result = CheckWinnerForMinimax();
+            if (result == aiSymbol) return 10 - depth;
+            else if (result == GetOpponentSymbol(aiSymbol)) return depth - 10;
+            else if (result == "Draw") return 0;
+            if (isMaximizing)
+            {
+                int bestScore = int.MinValue;
+                for (int i = 0; i < 9; i++)
+                {
+                    if (_field[i] == "")
+                    {
+                        _field[i] = aiSymbol;
+                        int score = Minimax(depth + 1, false, aiSymbol);
+                        _field[i] = "";
+                        bestScore = Math.Max(bestScore, score);
+                    }
+                }
+                return bestScore;
+            }
+            else
+            {
+                int bestScore = int.MaxValue;
+                string opponent = GetOpponentSymbol(aiSymbol);
+                for (int i = 0; i < 9; i++)
+                {
+                    if (_field[i] == "")
+                    {
+                        _field[i] = opponent;
+                        int score = Minimax(depth + 1, true, aiSymbol);
+                        _field[i] = "";
+                        bestScore = Math.Min(bestScore, score);
+                    }
+                }
+                return bestScore;
+            }
+        }
+
+        private string CheckWinnerForMinimax()
         {
             int[][] lines = new int[][]
             {
-        new int[]{0,1,2}, new int[]{3,4,5}, new int[]{6,7,8},
-        new int[]{0,3,6}, new int[]{1,4,7}, new int[]{2,5,8},
-        new int[]{0,4,8}, new int[]{2,4,6}
+                new int[] {0,1,2}, new int[] {3,4,5}, new int[] {6,7,8},
+                new int[] {0,3,6}, new int[] {1,4,7}, new int[] {2,5,8},
+                new int[] {0,4,8}, new int[] {2,4,6}
             };
             for (int i = 0; i < lines.Length; i++)
             {
                 int a = lines[i][0];
                 int b = lines[i][1];
                 int c = lines[i][2];
-
-                if (_board[a] == symbol && _board[b] == symbol && _board[c] == "")
+                if (_field[a] != "" && _field[a] == _field[b] && _field[b] == _field[c])
                 {
-                    _board[c] = _currentPlayer;
-                    CheckWinCondition();
-                    if (!_gameOver)
-                    {
-                        _currentPlayer = _currentPlayer == "X" ? "O" : "X";
-                    }
-                    return true;
-                }
-                if (_board[a] == symbol && _board[b] == "" && _board[c] == symbol)
-                {
-                    _board[b] = _currentPlayer;
-                    CheckWinCondition();
-                    if (!_gameOver)
-                    {
-                        _currentPlayer = _currentPlayer == "X" ? "O" : "X";
-                    }
-                    return true;
-                }
-                if (_board[a] == "" && _board[b] == symbol && _board[c] == symbol)
-                {
-                    _board[a] = _currentPlayer;
-                    CheckWinCondition();
-                    if (!_gameOver)
-                    {
-                        _currentPlayer = _currentPlayer == "X" ? "O" : "X";
-                    }
-                    return true;
+                    return _field[a];
                 }
             }
-            return false;
+            bool isDraw = true;
+            for (int i = 0; i < 9; i++)
+            {
+                if (_field[i] == "")
+                {
+                    isDraw = false;
+                    break;
+                }
+            }
+            if (isDraw) return "Draw";
+            return null;
         }
 
         private void CheckWinCondition()
         {
             int[][] lines = new int[][]
             {
-                new int[]{0,1,2}, new int[]{3,4,5}, new int[]{6,7,8},
-                new int[]{0,3,6}, new int[]{1,4,7}, new int[]{2,5,8},
-                new int[]{0,4,8}, new int[]{2,4,6}
+                new int[] {0,1,2}, new int[] {3,4,5}, new int[] {6,7,8},
+                new int[] {0,3,6}, new int[] {1,4,7}, new int[] {2,5,8},
+                new int[] {0,4,8}, new int[] {2,4,6}
             };
             for (int i = 0; i < lines.Length; i++)
             {
                 int a = lines[i][0];
                 int b = lines[i][1];
                 int c = lines[i][2];
-                if (this._board[a] != "" &&
-                    this._board[a] == this._board[b] &&
-                    this._board[b] == this._board[c])
+                if (_field[a] != "" && _field[a] == _field[b] && _field[b] == _field[c])
                 {
-                    this._gameOver = true;
-                    this._winner = this._board[a];
+                    _gameEnd = true;
+                    _winner = _field[a];
                     return;
                 }
             }
             bool isDraw = true;
             for (int i = 0; i < 9; i++)
             {
-                if (this._board[i] == "")
+                if (_field[i] == "")
                 {
                     isDraw = false;
                     break;
@@ -171,8 +228,8 @@ namespace TicTacToe
             }
             if (isDraw)
             {
-                this._gameOver = true;
-                this._winner = "Draw";
+                _gameEnd = true;
+                _winner = "Draw";
             }
         }
 
@@ -180,11 +237,17 @@ namespace TicTacToe
         {
             for (int i = 0; i < 9; i++)
             {
-                this._board[i] = "";
+                _field[i] = "";
             }
-            this._currentPlayer = "X";
-            this._gameOver = false;
-            this._winner = "";
+            _currentPlayer = "X";
+            _gameEnd = false;
+            _winner = "";
+            _nextAIMove = 0;
+        }
+
+        private string GetOpponentSymbol(string symbol)
+        {
+            return (symbol == "X") ? "O" : "X";
         }
     }
 }

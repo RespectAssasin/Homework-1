@@ -12,6 +12,7 @@ namespace TicTacToe
         private string _gameType;
         private int _difficult;
         private char _userChar;
+        private bool _endEvE;
 
         public MainWindow()
         {
@@ -19,6 +20,7 @@ namespace TicTacToe
             this._gameType = "";
             this._difficult = 1;
             this._userChar = '\0';
+            this._endEvE = false;
         }
 
         private async void StartGame(object sender, RoutedEventArgs e)
@@ -59,7 +61,7 @@ namespace TicTacToe
                 {
                     await Task.Delay(500);
                     this._logic.MakeAiMove(this._difficult, "X");
-                    UpdateBoardUI();
+                    UpdateFieldUI();
                     if (this._logic.GameOver)
                     {
                         EndGame();
@@ -71,6 +73,7 @@ namespace TicTacToe
                 }
             }
         }
+
 
         private Image GetSymbolImage(string symbol)
         {
@@ -86,17 +89,17 @@ namespace TicTacToe
             return img;
         }
 
-        private void UpdateBoardUI()
+        private void UpdateFieldUI()
         {
-            Butt00.Content = GetSymbolImage(_logic.Board[0]);
-            Butt01.Content = GetSymbolImage(_logic.Board[1]);
-            Butt02.Content = GetSymbolImage(_logic.Board[2]);
-            Butt10.Content = GetSymbolImage(_logic.Board[3]);
-            Butt11.Content = GetSymbolImage(_logic.Board[4]);
-            Butt12.Content = GetSymbolImage(_logic.Board[5]);
-            Butt20.Content = GetSymbolImage(_logic.Board[6]);
-            Butt21.Content = GetSymbolImage(_logic.Board[7]);
-            Butt22.Content = GetSymbolImage(_logic.Board[8]);
+            Butt00.Content = GetSymbolImage(_logic.Field[0]);
+            Butt01.Content = GetSymbolImage(_logic.Field[1]);
+            Butt02.Content = GetSymbolImage(_logic.Field[2]);
+            Butt10.Content = GetSymbolImage(_logic.Field[3]);
+            Butt11.Content = GetSymbolImage(_logic.Field[4]);
+            Butt12.Content = GetSymbolImage(_logic.Field[5]);
+            Butt20.Content = GetSymbolImage(_logic.Field[6]);
+            Butt21.Content = GetSymbolImage(_logic.Field[7]);
+            Butt22.Content = GetSymbolImage(_logic.Field[8]);
         }
 
         private void EndGame()
@@ -117,7 +120,8 @@ namespace TicTacToe
             {
                 MessageBox.Show("Ничья!");
             }
-            else
+            else if (_logic.Winner=="")
+            {} else
             {
                 MessageBox.Show("Победил " + _logic.Winner);
             }
@@ -137,7 +141,7 @@ namespace TicTacToe
                             return;
 
                         this._logic.MakeMove(x, y);
-                        UpdateBoardUI();
+                        UpdateFieldUI();
                         this.TurnBox.Text = this._logic.CurrentPlayer;
 
                         if (this._logic.GameOver)
@@ -151,7 +155,7 @@ namespace TicTacToe
                             if (!this._logic.GameOver)
                             {
                                 this._logic.MakeAiMove(this._difficult, this._logic.CurrentPlayer);
-                                UpdateBoardUI();
+                                UpdateFieldUI();
                                 if (this._logic.GameOver)
                                 {
                                     EndGame();
@@ -173,6 +177,7 @@ namespace TicTacToe
 
         private void BackToMenu(object sender, RoutedEventArgs e)
         {
+            if (_gameType == "EvE") _endEvE = true;
             if (this._logic != null)
             {
                 this._logic.ResetGame();
@@ -216,7 +221,17 @@ namespace TicTacToe
 
             this._logic = new TicTacToeLogic();
             this.TurnBox.Text = this._logic.CurrentPlayer;
-            UpdateBoardUI();
+            PlayAgainButton.IsEnabled = false;
+            Butt00.IsEnabled = true;
+            Butt01.IsEnabled = true;
+            Butt02.IsEnabled = true;
+            Butt10.IsEnabled = true;
+            Butt11.IsEnabled = true;
+            Butt12.IsEnabled = true;
+            Butt20.IsEnabled = true;
+            Butt21.IsEnabled = true;
+            Butt22.IsEnabled = true;
+            UpdateFieldUI();
         }
 
         private void GoToPvESettings(object sender, RoutedEventArgs e)
@@ -236,7 +251,8 @@ namespace TicTacToe
 
             this._logic = new TicTacToeLogic();
             this.TurnBox.Text = this._logic.CurrentPlayer;
-            UpdateBoardUI();
+            UpdateFieldUI();
+            PlayAgainButton.IsEnabled = false;
             await StartEvEGame();
         }
 
@@ -269,11 +285,12 @@ namespace TicTacToe
 
             if (_gameType == "PvE")
             {
+                ClearButt();
                 if (_userChar == 'O' && _logic.CurrentPlayer == "X")
                 {
                     await Task.Delay(500);
                     _logic.MakeAiMove(_difficult, "X");
-                    UpdateBoardUI();
+                    UpdateFieldUI();
                     if (_logic.GameOver)
                     {
                         EndGame();
@@ -306,32 +323,36 @@ namespace TicTacToe
                     break;
             }
         }
+        private void ClearButt()
+        {
+            Butt00.Content = "";
+            Butt01.Content = "";
+            Butt02.Content = "";
+            Butt10.Content = "";
+            Butt11.Content = "";
+            Butt12.Content = "";
+            Butt20.Content = "";
+            Butt21.Content = "";
+            Butt22.Content = "";
+            Butt00.IsEnabled = true;
+            Butt01.IsEnabled = true;
+            Butt02.IsEnabled = true;
+            Butt10.IsEnabled = true;
+            Butt11.IsEnabled = true;
+            Butt12.IsEnabled = true;
+            Butt20.IsEnabled = true;
+            Butt21.IsEnabled = true;
+            Butt22.IsEnabled = true;
+        }
         private async void PlayAgain(object sender, RoutedEventArgs e)
         {
             if (this._logic != null)
             {
                 this._logic.ResetGame();
-                Butt00.Content = "";
-                Butt01.Content = "";
-                Butt02.Content = "";
-                Butt10.Content = "";
-                Butt11.Content = "";
-                Butt12.Content = "";
-                Butt20.Content = "";
-                Butt21.Content = "";
-                Butt22.Content = "";
-                Butt00.IsEnabled = true;
-                Butt01.IsEnabled = true;
-                Butt02.IsEnabled = true;
-                Butt10.IsEnabled = true;
-                Butt11.IsEnabled = true;
-                Butt12.IsEnabled = true;
-                Butt20.IsEnabled = true;
-                Butt21.IsEnabled = true;
-                Butt22.IsEnabled = true;
+                ClearButt();
                 this.TurnBox.Text = this._logic.CurrentPlayer;
-                UpdateBoardUI();
-                
+                UpdateFieldUI();
+                PlayAgainButton.IsEnabled = false;
             }
             if (this._gameType == "EvE")
             {
@@ -341,7 +362,7 @@ namespace TicTacToe
             {
                 await Task.Delay(500);
                 this._logic.MakeAiMove(this._difficult, "X");
-                UpdateBoardUI();
+                UpdateFieldUI();
                 if (this._logic.GameOver)
                 {
                     EndGame();
@@ -356,11 +377,20 @@ namespace TicTacToe
         private async Task StartEvEGame()
         {
             if (this._logic == null) return;
+            Butt00.IsEnabled = false;
+            Butt01.IsEnabled = false;
+            Butt02.IsEnabled = false;
+            Butt10.IsEnabled = false;
+            Butt11.IsEnabled = false;
+            Butt12.IsEnabled = false;
+            Butt20.IsEnabled = false;
+            Butt21.IsEnabled = false;
+            Butt22.IsEnabled = false;
             while (!this._logic.GameOver)
             {
                 await Task.Delay(500);
                 this._logic.MakeAiMove(3, this._logic.CurrentPlayer);
-                UpdateBoardUI();
+                UpdateFieldUI();
                 if (this._logic.GameOver)
                 {
                     EndGame();
@@ -369,6 +399,12 @@ namespace TicTacToe
                 else
                 {
                     this.TurnBox.Text = this._logic.CurrentPlayer;
+                }
+                if(_endEvE)
+                {
+                    _endEvE = false;
+                    EndGame();
+                    break;
                 }
             }
         }
