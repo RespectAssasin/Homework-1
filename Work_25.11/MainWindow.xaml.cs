@@ -18,9 +18,6 @@ using System.Windows.Threading;
 
 namespace Work_25._11
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private List<Player> LeaderBoard = new List<Player>();
@@ -29,7 +26,7 @@ namespace Work_25._11
             InitializeComponent();
         }
 
-        private string UserName;
+        private string UserName = "Someone smart";
         private Random _random = new Random();
 
         private DateTime _startTime;
@@ -38,7 +35,7 @@ namespace Work_25._11
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            UserName = UserNameBox.Text;
+            if (UserNameBox.Text != string.Empty) UserName = UserNameBox.Text;
             UserInputPanel.Visibility = Visibility.Collapsed;
             StartTestPanel.Visibility = Visibility.Visible;
             UserNameBox.Text = string.Empty;
@@ -47,7 +44,6 @@ namespace Work_25._11
          private async void StartTest_Click(object sender, RoutedEventArgs e)
         {
             StartTestPanel.Visibility = Visibility.Collapsed;
-            //TimerBox.Text = string.Empty;
             ReactionTestPanel.Visibility = Visibility.Visible;
 
             StopButton.IsEnabled = false;
@@ -66,17 +62,10 @@ namespace Work_25._11
 
             MessageBox.Show($"Ваше время: {diff.ToString(@"mm\:ss\.fff")}", "Результат");
 
-            //StartTestPanel.Visibility= Visibility.Collapsed;
-
             Player player = new Player(UserName, diff);
             LeaderBoard.Add(player);
 
             UpdateLeaderboardDisplay();
-
-            //
-
-            //LeaderboardPanel.Visibility= Visibility.Visible;
-            
         }
         
         private void StopTest_Click(object sender, RoutedEventArgs e)
@@ -95,16 +84,20 @@ namespace Work_25._11
             Player4Text.Text = string.Empty;
             Player5Text.Text = string.Empty;
 
-            if (sortedPlayers.Count > 0) Player1Text.Text = $"1. {sortedPlayers[0].Username}: {sortedPlayers[0].Time}";
-            if (sortedPlayers.Count > 1) Player2Text.Text = $"2. {sortedPlayers[1].Username}: {sortedPlayers[1].Time}";
-            if (sortedPlayers.Count > 2) Player3Text.Text = $"3. {sortedPlayers[2].Username}: {sortedPlayers[2].Time}";
-            if (sortedPlayers.Count > 3) Player4Text.Text = $"4. {sortedPlayers[3].Username}: {sortedPlayers[3].Time}";
-            if (sortedPlayers.Count > 4) Player5Text.Text = $"5. {sortedPlayers[4].Username}: {sortedPlayers[4].Time}";
+            
+
+            if (sortedPlayers.Count > 0) Player1Text.Text = $"1. {sortedPlayers[0].Username}: {sortedPlayers[0].Time.ToString(@"mm\:ss\.fff")}";
+            if (sortedPlayers.Count > 1) Player2Text.Text = $"2. {sortedPlayers[1].Username}: {sortedPlayers[1].Time.ToString(@"mm\:ss\.fff")}";
+            if (sortedPlayers.Count > 2) Player3Text.Text = $"3. {sortedPlayers[2].Username}: {sortedPlayers[2].Time.ToString(@"mm\:ss\.fff")}";
+            if (sortedPlayers.Count > 3) Player4Text.Text = $"4. {sortedPlayers[3].Username}: {sortedPlayers[3].Time.ToString(@"mm\:ss\.fff")}";
+            if (sortedPlayers.Count > 4) Player5Text.Text = $"5. {sortedPlayers[4].Username}: {sortedPlayers[4].Time.ToString(@"mm\:ss\.fff")}";
         }
 
         private void PlayerMenuButt(object sender, RoutedEventArgs e)
         {
             UserInputPanel.Visibility = Visibility.Visible;
+
+            TimerBox.Text = "00:00:00";
 
             StartTestPanel.Visibility = Visibility.Collapsed;
             ReactionTestPanel.Visibility = Visibility.Collapsed;
@@ -124,6 +117,8 @@ namespace Work_25._11
         private void LeaderBoardMenuButt(object sender, RoutedEventArgs e)
         {
             LeaderboardPanel.Visibility = Visibility.Visible;
+
+            TimerBox.Text = "00:00:00";
 
             UserInputPanel.Visibility = Visibility.Collapsed;
             StartTestPanel.Visibility = Visibility.Collapsed;

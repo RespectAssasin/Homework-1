@@ -11,7 +11,7 @@
         >
     <Grid>
         <Menu>
-            <StackPanel Orientation="Horizontal" Margin="0,10,10,10">
+            <StackPanel Orientation="Horizontal"  Margin="0,10,10,10">
                 <MenuItem Height="30" FontSize="15" Header="Игрок" Click="PlayerMenuButt"/>
                 <MenuItem Header="Тест" FontSize="15" Click="TestMenuButt"/>
                 <MenuItem Header="Лидеры" FontSize="15" Width="143" Click="LeaderBoardMenuButt"/>
@@ -39,7 +39,6 @@
                 <TextBlock Name="Player3Text" Text="" FontSize="16" Margin="5"/>
                 <TextBlock Name="Player4Text" Text="" FontSize="16" Margin="5"/>
                 <TextBlock Name="Player5Text" Text="" FontSize="16" Margin="5"/>
-                <Button Content="Назад" Width="100" HorizontalAlignment="Right" Margin="10"/>
         </StackPanel>
     </Grid>
 </Window>
