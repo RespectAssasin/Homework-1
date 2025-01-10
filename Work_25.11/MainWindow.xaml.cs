@@ -43,6 +43,10 @@ namespace Work_25._11
 
          private async void StartTest_Click(object sender, RoutedEventArgs e)
         {
+            PlayerButton.IsEnabled = false;
+            TestMenuButton.IsEnabled = false;
+            LeaderBoardButton.IsEnabled = false;
+
             StartTestPanel.Visibility = Visibility.Collapsed;
             ReactionTestPanel.Visibility = Visibility.Visible;
 
@@ -66,6 +70,10 @@ namespace Work_25._11
             LeaderBoard.Add(player);
 
             UpdateLeaderboardDisplay();
+
+            PlayerButton.IsEnabled = true;
+            TestMenuButton.IsEnabled = true;
+            LeaderBoardButton.IsEnabled = true;
         }
         
         private void StopTest_Click(object sender, RoutedEventArgs e)

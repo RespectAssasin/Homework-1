@@ -12,9 +12,9 @@
     <Grid>
         <Menu>
             <StackPanel Orientation="Horizontal"  Margin="0,10,10,10">
-                <MenuItem Height="30" FontSize="15" Header="Игрок" Click="PlayerMenuButt"/>
-                <MenuItem Header="Тест" FontSize="15" Click="TestMenuButt"/>
-                <MenuItem Header="Лидеры" FontSize="15" Width="143" Click="LeaderBoardMenuButt"/>
+                <MenuItem x:Name="PlayerButton" Height="30" FontSize="15" Header="Игрок" Click="PlayerMenuButt"/>
+                <MenuItem x:Name="TestMenuButton" Header="Тест" FontSize="15" Click="TestMenuButt"/>
+                <MenuItem x:Name="LeaderBoardButton" Header="Лидеры" FontSize="15" Width="143" Click="LeaderBoardMenuButt"/>
             </StackPanel>
         </Menu>
 
